@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTI AGE HACK – Program pro biologické mládí</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 140px;
+            height: auto;
+            margin-bottom: 48px;
+            opacity: 0.9;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            color: #4a4a4a;
+            font-weight: 400;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .stat {
+            background: #f8f8f8;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .stat-number {
+            font-size: 72px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            margin-top: 12px;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 60px 0;
+            background: #fafafa;
+            margin: 60px 0;
+        }
+        
+        .problem .container {
+            padding: 40px 24px;
+        }
+        
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            letter-spacing: -0.01em;
+        }
+        
+        .problem-list {
+            list-style: none;
+            margin: 32px 0;
+        }
+        
+        .problem-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 18px;
+            color: #333;
+        }
+        
+        .problem-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Science Section */
+        .science {
+            padding: 60px 0;
+        }
+        
+        .research-box {
+            background: #f5f5f5;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 32px 0;
+            border-left: 4px solid #1a1a1a;
+        }
+        
+        .research-box p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #2a2a2a;
+        }
+        
+        .citation {
+            font-size: 14px;
+            color: #666;
+            margin-top: 16px;
+            font-style: italic;
+        }
+        
+        /* Protocol Section */
+        .protocol {
+            padding: 60px 0;
+            background: #fafafa;
+        }
+        
+        .protocol .container {
+            padding: 40px 24px;
+        }
+        
+        .pillar {
+            background: white;
+            padding: 40px;
+            margin: 32px 0;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .pillar h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .pillar-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+        
+        .pillar p {
+            font-size: 17px;
+            color: #333;
+            margin: 16px 0;
+        }
+        
+        .pillar ul {
+            margin: 16px 0 0 20px;
+            list-style-type: disc;
+        }
+        
+        .pillar li {
+            margin: 8px 0;
+            color: #444;
+            font-size: 16px;
+        }
+        
+        /* Program Structure */
+        .program-structure {
+            padding: 60px 0;
+        }
+        
+        .phase {
+            background: #f8f8f8;
+            padding: 32px;
+            margin: 24px 0;
+            border-radius: 8px;
+        }
+        
+        .phase h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .phase-duration {
+            display: inline-block;
+            background: #1a1a1a;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        
+        /* Lead Capture */
+        .lead-capture {
+            background: #1a1a1a;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .lead-capture h2 {
+            color: white;
+            margin-bottom: 24px;
+        }
+        
+        .lead-capture p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+        }
+        
+        .form-group {
+            max-width: 500px;
+            margin: 0 auto 16px;
+        }
+        
+        input[type="email"],
+        input[type="text"] {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            background: white;
+        }
+        
+        button {
+            background: white;
+            color: #1a1a1a;
+            padding: 16px 48px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .privacy-note {
+            font-size: 13px;
+            color: #aaa;
+            margin-top: 24px;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 60px 0;
+        }
+        
+        .faq-item {
+            margin: 32px 0;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-item h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .faq-item p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background: #f5f5f5;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .disclaimer {
+            max-width: 700px;
+            margin: 24px auto;
+            font-size: 13px;
+            color: #888;
+            line-height: 1.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+            }
+            
+            .stat-number {
+                font-size: 56px;
+            }
+            
+            .pillar {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="dna-helix.svg" alt="DNA helix" class="logo">
+            <h1>ANTI AGE HACK</h1>
+            <p class="subtitle">5 vědecky ověřených "hacků", které zpomalí vaše biologické stárnutí – bez diet, pilulек a drahých procedur</p>
+            
+            <div class="stat">
+                <div class="stat-number">80%</div>
+                <div class="stat-label">vašeho stárnutí ovlivňujete každodenními rozhodnutími</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2>Proč většina lidí stárne rychleji, než by musela?</h2>
+            
+            <ul class="problem-list">
+                <li>Spoléhají na genetiku („V rodině se všichni dožili málo")</li>
+                <li>Řeší symptomy, ne příčiny (bolest, únava, metabolické problémy)</li>
+                <li>Nevědí, které intervence mají největší dopad</li>
+                <li>Nemají systematický přístup – pokouší se o vše najednou nebo nic</li>
+                <li>Chybí jim zpětná vazba – neměří, takže nevidí pokrok</li>
+            </ul>
+            
+            <p style="margin-top: 32px; font-size: 18px;">Výsledek? Ve věku 53 let vypadáte a cítíte se jako 65. A zpětně to nezměníte.</p>
+        </div>
+    </section>
+    
+    <!-- Science Section -->
+    <section class="science">
+        <div class="container">
+            <h2>Co říká věda o zpomalení stárnutí?</h2>
+            
+            <div class="research-box">
+                <p><strong>Epigenetické hodiny</strong> – vaše DNA stárne nezávisle na věku v občance. Výzkumy z Harvardu a UCLA prokázaly, že životní styl ovlivňuje biologické stáří více než genetika.</p>
+                <div class="citation">Horvath, Steve. "DNA methylation age of human tissues and cell types." Genome Biology, 2013</div>
+            </div>
+            
+            <div class="research-box">
+                <p><strong>Autofagie</strong> – proces buněčného „úklidu", který tělo aktivuje během půstu a cvičení. Yoshinori Ohsumi získal Nobelovu cenu za objev tohoto mechanismu (2016).</p>
+                <div class="citation">Ohsumi, Yoshinori. Nobel Prize in Physiology or Medicine, 2016</div>
+            </div>
+            
+            <div class="research-box">
+                <p><strong>VO2 Max</strong> – jeden z nejsilnějších prediktorů mortality. Každý 1 MET nárůst = 13% snížení rizika úmrtí ze všech příčin.</p>
+                <div class="citation">Mandsager et al. "Association of Cardiorespiratory Fitness With Long-term Mortality." JAMA, 2018</div>
+            </div>
+            
+            <p style="margin-top: 40px; font-size: 18px; line-height: 1.8;">
+                <strong>Závěr:</strong> Máte kontrolu nad tím, jak budete stárnout. Potřebujete jen správný protokol a systematický přístup.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Protocol Section -->
+    <section class="protocol">
+        <div class="container">
+            <h2>5 Anti-Age Hacků (které věda potvrzuje)</h2>
+            
+            <div class="pillar">
+                <h3><span class="pillar-number">H1</span> Metabolické zdraví</h3>
+                <p><strong>Hack:</strong> Změňte KDY jíte, ne CO jíte</p>
+                <ul>
+                    <li>Omezené časové okno pro jídlo (16:8 nebo 14:10)</li>
+                    <li>Minimalizace glykačních konečných produktů (AGE)</li>
+                    <li>Optimalizace proteinové syntézy pro udržení svalové hmoty</li>
+                </ul>
+                <p><em>Proč to funguje:</em> Glukózové špičky způsobují záněty a poškozují tkáně. Konstantně vysoký inzulin blokuje spalování tuku a buněčnou opravu.</p>
+            </div>
+            
+            <div class="pillar">
+                <h3><span class="pillar-number">H2</span> Kardiovaskulární a svalová kapacita</h3>
+                <p><strong>Hack:</strong> 80% nízkointenzivní, 20% vysokointenzivní cvičení</p>
+                <ul>
+                    <li>Zóna 2 trénink (180 min/týden) – efektivní spalování tuku</li>
+                    <li>Silový trénink (3× týdně) – prevence sarkopenie</li>
+                    <li>Intervalový trénink (1× týdně) – podpora VO2 max</li>
+                </ul>
+                <p><em>Proč to funguje:</em> Svaly jsou metabolický orgán. Mitochondrie jsou „elektrárny" buněk – více a zdravějších mitochondrií = více energie a pomalejší stárnutí.</p>
+            </div>
+            
+            <div class="pillar">
+                <h3><span class="pillar-number">H3</span> Neuronální regenerace přes spánek</h3>
+                <p><strong>Hack:</strong> Spánek je detox pro mozek – optimalizujte timing a prostředí</p>
+                <ul>
+                    <li>7-9 hodin kvalitního spánku v temné, chladné místnosti (16-18°C)</li>
+                    <li>Blokace modrého světla 2h před spánkem</li>
+                    <li>Konzistentní spánkové okno (cirkadiánní rytmus)</li>
+                </ul>
+                <p><em>Proč to funguje:</em> Mozek během spánku vyplavuje toxické proteiny spojené s Alzheimerem. Nedostatek spánku = kumulativní poškození.</p>
+            </div>
+            
+            <div class="pillar">
+                <h3><span class="pillar-number">H4</span> Hormeze (pozitivní stres)</h3>
+                <p><strong>Hack:</strong> Kontrolovaný stres aktivuje geny dlouhověkosti</p>
+                <ul>
+                    <li>Saunování (4× týdně, 20 min při 80°C) – kardiovaskulární benefity</li>
+                    <li>Chladová expozice (studené sprchy, led) – metabolická aktivace</li>
+                    <li>Intenzivní cvičení v krátkých intervalech</li>
+                </ul>
+                <p><em>Proč to funguje:</em> „Co nás nezabije, to nás posílí" – tělo reaguje na kontrolovaný stres adaptací a posilováním systémů.</p>
+            </div>
+            
+            <div class="pillar">
+                <h3><span class="pillar-number">H5</span> Suplementace na míru</h3>
+                <p><strong>Hack:</strong> 3-5 správných suplementů má větší dopad než 20 náhodných</p>
+                <ul>
+                    <li>NAD+ prekurzory (NMN/NR) – oprava DNA, mitochondriální funkce</li>
+                    <li>Omega-3 (EPA/DHA) – protizánětlivé účinky</li>
+                    <li>Vitamin D3+K2 – zdraví kostí a imunitní systém</li>
+                    <li>Resveratrol/Quercetin – aktivátory sirtuinů</li>
+                </ul>
+                <p><em>Upozornění:</em> Suplementy nejsou náhrada základního protokolu. Vždy konzultujte s lékařem.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Program Structure -->
+    <section class="program-structure">
+        <div class="container">
+            <h2>Jak program funguje?</h2>
+            
+            <div class="phase">
+                <span class="phase-duration">FÁZE 1: Týdny 1-4</span>
+                <h4>Diagnostika a baseline</h4>
+                <p>Zjistíme vaše aktuální biologické ukazatele, metabolické zdraví a identifikujeme největší rizika. Zahrnuje analýzu krevních markerů, tělesného složení a výkonnostních testů.</p>
+            </div>
+            
+            <div class="phase">
+                <span class="phase-duration">FÁZE 2: Týdny 5-12</span>
+                <h4>Implementace protokolu</h4>
+                <p>Postupně budujeme návyky ve všech pěti pilířích. Začínáme jedním pilířem, dokud není automatizovaný, pak přidáváme další. Každý týden dostáváte konkrétní akční kroky.</p>
+            </div>
+            
+            <div class="phase">
+                <span class="phase-duration">FÁZE 3: Týdny 13-24</span>
+                <h4>Optimalizace a měření</h4>
+                <p>Upravujeme protokol na základě vašich výsledků. Opakujeme diagnostické testy a vidíme reálná zlepšení v biologických markerech. Cíl: snížení biologického věku o 2-5 let během 6 měsíců.</p>
+            </div>
+            
+            <p style="margin-top: 40px; font-size: 18px; font-weight: 600;">
+                Program trvá 24 týdnů (6 měsíců) s možností pokračování v udržovací fázi.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Lead Capture -->
+    <section class="lead-capture">
+        <div class="container">
+            <h2>Získejte zdarma: ANTI AGE HACK Assessment</h2>
+            <p>15minutový test, který odhalí, který z 5 hacků vám přinese největší změnu. Zjistíte přesně, kde děláte největší chyby a jak je rychle napravit.</p>
+            
+            <form id="leadForm">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Jméno" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <button type="submit">Získat Assessment zdarma</button>
+            </form>
+            
+            <p class="privacy-note">Vaše údaje jsou v bezpečí. Používáme je pouze k zaslání assessment testu.</p>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Časté otázky</h2>
+            
+            <div class="faq-item">
+                <h4>Je to pro mě, když mám 53 let a nikdy jsem se tímto nezabýval?</h4>
+                <p>Ano, to je přesně ideální okamžik. Největší dopady se projevují u lidí 45-60 let, protože ještě nejste v pokročilém stadiu degenerace, ale již vidíte první známky. Navíc je zde dostatek času na reverzi.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Potřebuji na to speciální vybavení nebo drahé suplementy?</h4>
+                <p>Ne. 80% výsledků získáte ze základních pilířů (jídlo, pohyb, spánek), které nevyžadují téměř žádné investice. Suplementace je volitelná optimalizace pro pokročilé.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Kolik času to denně zabere?</h4>
+                <p>Záleží na fázi. Zpočátku 30-60 minut denně (pohyb, příprava jídla). Jakmile jsou návyky zavedené, většina se děje automaticky. Nejsou to „extra" aktivity, ale nahrazení současných neefektivních činností.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Mám už nějaké zdravotní problémy. Můžu program dodržovat?</h4>
+                <p>Program je obecně bezpečný, ale vždy doporučujeme konzultaci s lékařem před změnou životního stylu, zejména pokud berete léky nebo máte diagnostikovaná onemocnění. Mnoho intervencí pomáhá zlepšit existující zdravotní stavy (diabetes 2. typu, hypertenzi).</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Jaké výsledky mohu reálně očekávat?</h4>
+                <p>Po 6 měsících: snížení biologického věku o 2-5 let (měřeno epigenetickými hodinami), zlepšení krevních markerů (cholesterol, záněty), zvýšení VO2 max o 15-25%, lepší kvalita spánku a více energie. Ale hlavní benefit? Pocit, že máte kontrolu nad svým stárnutím.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ANTI AGE HACK. Všechna práva vyhrazena.</p>
+            
+            <div class="disclaimer">
+                <strong>Právní upozornění:</strong> Tento program není lékařskou službou a nenahrazuje konzultaci s lékařem. Veškeré informace jsou pouze edukační. Suplementy zmíněné na stránce nejsou registrovanými léky a jejich účinnost může být individuální. Před zahájením jakéhokoliv suplementačního režimu konzultujte svého lékaře. Program je určen pro zdravé dospělé osoby.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would integrate with your email service (Mailchimp, ConvertKit, etc.)
+            const formData = new FormData(this);
+            
+            alert('Děkujeme! Assessment test byl odeslán na váš email.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
