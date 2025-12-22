@@ -14,33 +14,96 @@ function initAnimatedLogo() {
     
     logos.forEach(logo => {
         const text = logo.textContent;
+        const isFooter = logo.closest('footer') !== null;
         logo.innerHTML = '';
+        logo.dataset.isFooter = isFooter;
         
         // Split text into individual letters
         for (let i = 0; i < text.length; i++) {
             const span = document.createElement('span');
             span.className = 'letter';
             span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
-            span.style.color = '#0a0a1a'; // Start with dark
+            span.style.color = isFooter ? '#ffffff' : '#0a0a1a';
             logo.appendChild(span);
         }
     });
     
-    // Animate letters
-    animateLogoLetters();
+    // Start animation cycle
+    animateLogoCycle();
 }
 
-function animateLogoLetters() {
-    const letters = document.querySelectorAll('.logo-text .letter');
-    const colors = ['#0a0a1a', '#ffffff', '#6366f1', '#00ff88']; // dark, white, indigo, neon green
+function animateLogoCycle() {
+    const navLogo = document.querySelector('.nav-logo .logo-text');
+    const footerLogo = document.querySelector('.footer-logo .logo-text');
     
-    letters.forEach((letter, index) => {
-        setInterval(() => {
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            letter.style.color = randomColor;
-            letter.style.textShadow = randomColor === '#ffffff' ? '0 0 1px rgba(0,0,0,0.3)' : 'none';
-        }, 800 + (index * 100)); // Staggered timing for wave effect
-    });
+    // Colors for light background (nav) - no white
+    const navColors = ['#0a0a1a', '#6366f1', '#00ff88', '#e11d48'];
+    // Colors for dark background (footer) - no dark
+    const footerColors = ['#ffffff', '#6366f1', '#00ff88', '#fbbf24'];
+    
+    let phase = 0; // 0: all white/black, 1: random colors, 2: all black/white, 3: random colors
+    const phaseDuration = 3000; // 3 seconds per phase
+    const letterChangeInterval = 150;
+    
+    function setAllLetters(logo, color) {
+        const letters = logo.querySelectorAll('.letter');
+        letters.forEach((letter, i) => {
+            setTimeout(() => {
+                letter.style.color = color;
+            }, i * 50); // Wave effect
+        });
+    }
+    
+    function randomizeLetters(logo, colors) {
+        const letters = logo.querySelectorAll('.letter');
+        letters.forEach((letter, i) => {
+            setTimeout(() => {
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                letter.style.color = randomColor;
+            }, i * letterChangeInterval);
+        });
+    }
+    
+    function runPhase() {
+        if (navLogo) {
+            switch(phase) {
+                case 0: // All to accent color
+                    setAllLetters(navLogo, '#6366f1');
+                    break;
+                case 1: // Random colors
+                    randomizeLetters(navLogo, navColors);
+                    break;
+                case 2: // All to dark
+                    setAllLetters(navLogo, '#0a0a1a');
+                    break;
+                case 3: // Random colors again
+                    randomizeLetters(navLogo, navColors);
+                    break;
+            }
+        }
+        
+        if (footerLogo) {
+            switch(phase) {
+                case 0: // All to accent
+                    setAllLetters(footerLogo, '#00ff88');
+                    break;
+                case 1: // Random colors
+                    randomizeLetters(footerLogo, footerColors);
+                    break;
+                case 2: // All to white
+                    setAllLetters(footerLogo, '#ffffff');
+                    break;
+                case 3: // Random colors again
+                    randomizeLetters(footerLogo, footerColors);
+                    break;
+            }
+        }
+        
+        phase = (phase + 1) % 4;
+        setTimeout(runPhase, phaseDuration);
+    }
+    
+    runPhase();
 }
 
 // Initialize animated logo on page load
