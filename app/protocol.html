@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Můj protokol – ANTI AGE HACK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <script src="/assets/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body class="helix-bg pb-32">
+
+<header class="bg-surface/70 sticky top-0 z-40 backdrop-blur-xl border-b border-white/5">
+  <div class="flex justify-between items-center w-full px-4 py-4 max-w-3xl mx-auto">
+    <div class="flex items-center gap-4">
+      <a href="/app/dashboard.html" class="text-primary active:scale-95 transition">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
+      <h1 class="font-h3 text-h3 text-primary">Dnešní protokol</h1>
+    </div>
+    <div class="flex gap-3">
+      <button class="text-on-surface-variant"><span class="material-symbols-outlined">share</span></button>
+      <button class="text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-4 py-6 space-y-10">
+
+  <!-- Section: Stravovací režim (Fasting Window – reframed from "Autophagy") -->
+  <section>
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="font-h3 text-h3 text-on-surface">Stravovací režim</h2>
+      <span class="pill pill-primary">Aktivní</span>
+    </div>
+    <div class="relative pl-8 space-y-8">
+      <div class="absolute left-[11px] top-2 bottom-2 w-[2px] bg-outline-variant/30"></div>
+
+      <!-- Step 1 - Complete -->
+      <div class="relative">
+        <div class="absolute -left-[26px] top-1 w-4 h-4 rounded-full bg-secondary ring-4 ring-secondary/20"></div>
+        <p class="font-label-caps text-label-caps text-secondary">06:30 — HOTOVO</p>
+        <h4 class="font-h3 text-h3 mt-1 text-white">Hydratace + minerály</h4>
+        <p class="text-on-surface-variant text-body-md">500 ml vody se špetkou soli a citronem.</p>
+      </div>
+
+      <!-- Step 2 - In Progress -->
+      <div class="relative">
+        <div class="absolute -left-[26px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
+        <p class="font-label-caps text-label-caps text-primary">08:00 — PRÁVĚ TEĎ</p>
+        <h4 class="font-h3 text-h3 mt-1 text-white">Fasting Window</h4>
+        <p class="text-on-surface-variant text-body-md">Bez kalorického příjmu do 12:00. Černá káva nebo čaj povoleny.</p>
+        <div class="mt-4 glass-card p-4 rounded-xl border border-primary/20">
+          <div class="flex justify-between items-end mb-2">
+            <span class="text-label-caps font-label-caps text-primary uppercase tracking-widest">Časový úsek</span>
+            <span class="text-h3 font-data-display text-primary">03:42:12</span>
+          </div>
+          <div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+            <div class="bg-primary h-full" style="width:65%"></div>
+          </div>
+          <p class="text-xs text-on-surface-variant mt-2">Časově omezené stravování je součástí vašeho plánu životního stylu.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 - Upcoming -->
+      <div class="relative opacity-50">
+        <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-outline-variant"></div>
+        <p class="font-label-caps text-label-caps text-on-surface-variant">12:00 — NADCHÁZEJÍCÍ</p>
+        <h4 class="font-h3 text-h3 mt-1 text-white">Snídaně</h4>
+        <p class="text-on-surface-variant text-body-md">Vysoký podíl bílkovin (40 g+), nízký glykemický index.</p>
+      </div>
+
+      <!-- Step 4 - Upcoming -->
+      <div class="relative opacity-50">
+        <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-outline-variant"></div>
+        <p class="font-label-caps text-label-caps text-on-surface-variant">17:00 — NADCHÁZEJÍCÍ</p>
+        <h4 class="font-h3 text-h3 mt-1 text-white">Lehká večeře</h4>
+        <p class="text-on-surface-variant text-body-md">Bílkoviny + zelenina. Min. 2,5 h před spaním.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Sauna Protocol (Hormeze - reframed) -->
+  <section>
+    <h2 class="font-h3 text-h3 text-on-surface mb-4">Regenerace</h2>
+    <div class="glass-card rounded-2xl overflow-hidden">
+      <div class="relative h-48 w-full bg-gradient-to-br from-surface-container-high to-surface-container-low flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary opacity-40" style="font-size:140px;">whatshot</span>
+        <div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+        <div class="absolute bottom-4 left-4">
+          <p class="font-label-caps text-label-caps text-secondary mb-1 uppercase tracking-widest">Regenerační fáze</p>
+          <h3 class="font-h2 text-h2 text-white">Sauna protokol</h3>
+        </div>
+      </div>
+      <div class="p-4 grid grid-cols-2 gap-4">
+        <div class="bg-surface-container-low p-3 rounded-xl border border-white/5">
+          <p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Teplota</p>
+          <p class="font-data-display text-h3 text-primary">85 °C</p>
+        </div>
+        <div class="bg-surface-container-low p-3 rounded-xl border border-white/5">
+          <p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Délka</p>
+          <p class="font-data-display text-h3 text-primary">20 min</p>
+        </div>
+      </div>
+      <div class="px-4 pb-4">
+        <div class="flex items-start gap-3 p-3 bg-surface-variant/20 rounded-xl">
+          <span class="material-symbols-outlined text-primary text-sm flex-shrink-0">info</span>
+          <p class="text-body-md text-on-surface-variant text-sm leading-tight">Sauna je tradiční regenerační praktika. Můžete ji zakončit krátkou studenou sprchou. Pokud máte kardiovaskulární problémy, konzultujte s lékařem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Daily Stack – COMPLIANCE: only authorized claims -->
+  <section>
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="font-h3 text-h3 text-on-surface">Dnešní doplňky</h2>
+      <button class="text-primary font-label-caps text-label-caps">UPRAVIT</button>
+    </div>
+    <div class="space-y-3">
+
+      <!-- Vitamin D3 + K2 (compliant claim) -->
+      <div class="glass-card p-4 rounded-2xl">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-primary">sunny</span>
+            </div>
+            <div>
+              <h4 class="font-body-lg text-white font-bold">Vitamin D3 + K2</h4>
+              <p class="font-label-caps text-label-caps text-on-surface-variant uppercase">2000 IU + 100 µg · ráno</p>
+            </div>
+          </div>
+          <button class="w-9 h-9 rounded-full bg-secondary flex items-center justify-center flex-shrink-0" aria-label="Hotovo">
+            <span class="material-symbols-outlined text-on-secondary">check</span>
+          </button>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-3 pl-16">Vitamin D přispívá k normální funkci svalů a imunitního systému. Vitamin K přispívá k udržení normálního stavu kostí.</p>
+      </div>
+
+      <!-- Omega-3 -->
+      <div class="glass-card p-4 rounded-2xl">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-secondary/15 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-secondary">water_drop</span>
+            </div>
+            <div>
+              <h4 class="font-body-lg text-white font-bold">Omega-3 (EPA + DHA)</h4>
+              <p class="font-label-caps text-label-caps text-on-surface-variant uppercase">2000 mg · s jídlem</p>
+            </div>
+          </div>
+          <button class="w-9 h-9 rounded-full bg-secondary flex items-center justify-center flex-shrink-0" aria-label="Hotovo">
+            <span class="material-symbols-outlined text-on-secondary">check</span>
+          </button>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-3 pl-16">EPA a DHA přispívají k normální činnosti srdce (při příjmu min. 250 mg/den). DHA přispívá k udržení normální činnosti mozku (250 mg/den).</p>
+      </div>
+
+      <!-- B-komplex (replaced "NAD+ Precursor") -->
+      <div class="glass-card p-4 rounded-2xl">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-primary">pill</span>
+            </div>
+            <div>
+              <h4 class="font-body-lg text-white font-bold">B-komplex</h4>
+              <p class="font-label-caps text-label-caps text-on-surface-variant uppercase">1 kapsle · ráno</p>
+            </div>
+          </div>
+          <button class="w-9 h-9 rounded-full border-2 border-primary/40 flex items-center justify-center flex-shrink-0" aria-label="Označit jako hotové">
+            <span class="material-symbols-outlined text-primary opacity-50">check</span>
+          </button>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-3 pl-16">Niacin (B3) přispívá ke snížení míry únavy a vyčerpání. Vitamin B6 přispívá k normálnímu energetickému metabolismu.</p>
+      </div>
+
+      <!-- Magnesium -->
+      <div class="glass-card p-4 rounded-2xl">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim/15 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim">circle</span>
+            </div>
+            <div>
+              <h4 class="font-body-lg text-white font-bold">Hořčík (Magnesium glycinát)</h4>
+              <p class="font-label-caps text-label-caps text-on-surface-variant uppercase">400 mg · večer</p>
+            </div>
+          </div>
+          <button class="w-9 h-9 rounded-full border-2 border-primary/40 flex items-center justify-center flex-shrink-0" aria-label="Označit jako hotové">
+            <span class="material-symbols-outlined text-primary opacity-50">check</span>
+          </button>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-3 pl-16">Hořčík přispívá k normální činnosti svalů a ke snížení míry únavy a vyčerpání.</p>
+      </div>
+    </div>
+
+    <div class="disclaimer-box mt-6">
+      <strong class="text-on-surface">Doplňky stravy nenahrazují pestrou a vyváženou stravu</strong> ani zdravý životní styl. Nepřekračujte doporučené denní dávkování. Uchovávejte mimo dosah dětí. Pokud užíváte léky nebo máte zdravotní potíže, konzultujte užívání s lékařem či lékárníkem.
+    </div>
+  </section>
+</main>
+
+<!-- Complete Day FAB -->
+<div class="fixed bottom-20 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-transparent pointer-events-none z-30">
+  <div class="max-w-3xl mx-auto pointer-events-auto">
+    <button class="w-full btn-primary py-4 text-base">
+      <span class="material-symbols-outlined">check_circle</span>
+      Označit den za dokončený
+    </button>
+  </div>
+</div>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-lg border-t border-white/10 flex justify-around items-center px-4 py-3">
+  <a href="/app/dashboard.html" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">home</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Home</span>
+  </a>
+  <a href="/app/biometrics.html" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">monitoring</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Metriky</span>
+  </a>
+  <a href="/app/protocol.html" class="flex flex-col items-center bg-primary-container/20 text-primary rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">event_note</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Protokol</span>
+  </a>
+  <a href="#" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">storefront</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Shop</span>
+  </a>
+  <a href="#" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">person</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Profil</span>
+  </a>
+</nav>
+
+<script src="/assets/app.js"></script>
+</body>
+</html>
