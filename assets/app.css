@@ -157,3 +157,92 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 @media (max-width: 768px) {
   .hide-mobile { display: none; }
 }
+
+/* ===== Cookie Consent Banner ===== */
+.cookie-banner {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  max-width: 560px;
+  z-index: 9999;
+  background: rgba(23, 31, 51, 0.92);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(138, 235, 255, 0.2);
+  box-shadow: 0 24px 64px -16px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 20px;
+  color: #dae2fd;
+  font-size: 14px;
+  line-height: 1.5;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2), opacity 0.4s;
+}
+.cookie-banner.visible { transform: translateY(0); opacity: 1; }
+.cookie-banner h3 { font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 6px; }
+.cookie-banner p { color: #bbc9cd; margin: 0 0 14px; font-size: 13px; }
+.cookie-banner a { color: #8aebff; text-decoration: underline; }
+.cookie-banner-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.cookie-banner-actions button {
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 0.5rem;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+.cookie-banner-actions button:active { transform: scale(0.98); }
+.cookie-btn-accept {
+  background: linear-gradient(135deg, #22d3ee 0%, #4de082 100%);
+  color: #00363e;
+  flex: 1;
+  min-width: 140px;
+}
+.cookie-btn-reject {
+  background: rgba(34, 42, 61, 0.6);
+  color: #dae2fd;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.cookie-btn-settings {
+  background: transparent;
+  color: #bbc9cd;
+}
+.cookie-banner-categories {
+  margin: 12px 0 16px;
+  padding: 12px;
+  background: rgba(6, 14, 32, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  display: none;
+}
+.cookie-banner.show-categories .cookie-banner-categories { display: block; }
+.cookie-cat {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.cookie-cat:last-child { border-bottom: 0; }
+.cookie-cat-info strong { color: #fff; font-size: 13px; display: block; margin-bottom: 2px; }
+.cookie-cat-info small { color: #859397; font-size: 12px; }
+.cookie-toggle { position: relative; width: 36px; height: 20px; flex-shrink: 0; }
+.cookie-toggle input { opacity: 0; width: 0; height: 0; }
+.cookie-toggle .slider {
+  position: absolute; cursor: pointer; inset: 0;
+  background: #2d3449; border-radius: 999px;
+  transition: 0.3s;
+}
+.cookie-toggle .slider:before {
+  position: absolute; content: ""; height: 14px; width: 14px;
+  left: 3px; bottom: 3px; background: #fff; border-radius: 50%;
+  transition: 0.3s;
+}
+.cookie-toggle input:checked + .slider { background: linear-gradient(135deg, #22d3ee, #4de082); }
+.cookie-toggle input:checked + .slider:before { transform: translateX(16px); }
+.cookie-toggle input:disabled + .slider { opacity: 0.6; cursor: not-allowed; }

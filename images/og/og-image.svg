@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1326"/>
+      <stop offset="100%" stop-color="#060e20"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="20%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#4de082" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#4de082" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="85%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#2fd9f4" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#2fd9f4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#4de082"/>
+    </linearGradient>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#4de082"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2fd9f4" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Top bar with logo -->
+  <g transform="translate(64,64)">
+    <rect width="56" height="56" rx="12" fill="url(#logoGrad)"/>
+    <!-- DNA glyph -->
+    <g transform="translate(28,28)" stroke="#00363e" stroke-width="2.4" stroke-linecap="round" fill="none">
+      <path d="M -10 -14 Q 0 -7, 10 -14"/>
+      <path d="M -10 14 Q 0 7, 10 14"/>
+      <path d="M -10 -14 Q 0 0, -10 14"/>
+      <path d="M 10 -14 Q 0 0, 10 14"/>
+      <line x1="-7" y1="-7" x2="7" y2="-7"/>
+      <line x1="-7" y1="7" x2="7" y2="7"/>
+    </g>
+    <text x="80" y="38" fill="#ffffff" font-family="Geist, monospace, sans-serif" font-size="28" font-weight="700" letter-spacing="2">
+      ANTI AGE <tspan fill="#8aebff">HACK</tspan>
+    </text>
+  </g>
+
+  <!-- Eyebrow pill -->
+  <g transform="translate(64,200)">
+    <rect width="226" height="36" rx="18" fill="#171f33" stroke="#8aebff" stroke-opacity="0.3"/>
+    <circle cx="20" cy="18" r="4" fill="#4de082"/>
+    <text x="36" y="24" fill="#8aebff" font-family="Geist, monospace, sans-serif" font-size="13" font-weight="600" letter-spacing="2">PRO MUŽE 45–60 LET</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="64" y="320" fill="#ffffff" font-family="Inter, sans-serif" font-size="68" font-weight="800" letter-spacing="-1.4">Méně energie než dřív?</text>
+  <text x="64" y="400" fill="url(#accent)" font-family="Inter, sans-serif" font-size="68" font-weight="800" letter-spacing="-1.4">Není to věk. Je to rutina.</text>
+
+  <!-- Subheadline -->
+  <text x="64" y="460" fill="#bbc9cd" font-family="Inter, sans-serif" font-size="22" font-weight="400">26týdenní program pro muže, kteří chtějí mít po padesátce víc síly,</text>
+  <text x="64" y="490" fill="#bbc9cd" font-family="Inter, sans-serif" font-size="22" font-weight="400">než měli ve čtyřicítce. 5 pilířů životního stylu.</text>
+
+  <!-- Stats row -->
+  <g transform="translate(64,540)">
+    <g>
+      <text fill="url(#accent)" font-family="Geist, monospace, sans-serif" font-size="40" font-weight="700">5</text>
+      <text x="56" y="-2" fill="#bbc9cd" font-family="Inter, sans-serif" font-size="14">PILÍŘŮ</text>
+      <text x="56" y="20" fill="#dae2fd" font-family="Inter, sans-serif" font-size="14" font-weight="600">PROGRAMU</text>
+    </g>
+    <g transform="translate(220,0)">
+      <text fill="url(#accent)" font-family="Geist, monospace, sans-serif" font-size="40" font-weight="700">26</text>
+      <text x="74" y="-2" fill="#bbc9cd" font-family="Inter, sans-serif" font-size="14">TÝDNŮ</text>
+      <text x="74" y="20" fill="#dae2fd" font-family="Inter, sans-serif" font-size="14" font-weight="600">KROK ZA KROKEM</text>
+    </g>
+    <g transform="translate(490,0)">
+      <text fill="url(#accent)" font-family="Geist, monospace, sans-serif" font-size="40" font-weight="700">15</text>
+      <text x="60" y="9" fill="#bbc9cd" font-family="Inter, sans-serif" font-size="20">min</text>
+      <text x="110" y="-2" fill="#bbc9cd" font-family="Inter, sans-serif" font-size="14">VSTUPNÍ</text>
+      <text x="110" y="20" fill="#dae2fd" font-family="Inter, sans-serif" font-size="14" font-weight="600">DOTAZNÍK ZDARMA</text>
+    </g>
+  </g>
+
+  <!-- Vitality Score card mock (right side) -->
+  <g transform="translate(820,210)">
+    <rect width="320" height="240" rx="16" fill="#171f33" fill-opacity="0.7" stroke="#8aebff" stroke-opacity="0.18"/>
+    <text x="24" y="40" fill="#8aebff" font-family="Geist, monospace, sans-serif" font-size="13" font-weight="600" letter-spacing="2">SKÓRE VITALITY</text>
+    <text x="24" y="110" fill="#ffffff" font-family="Geist, monospace, sans-serif" font-size="72" font-weight="700">85</text>
+    <text x="124" y="110" fill="#bbc9cd" font-family="Inter, sans-serif" font-size="24" font-weight="400">/100</text>
+
+    <!-- Progress bar -->
+    <rect x="24" y="135" width="272" height="6" rx="3" fill="#2d3449"/>
+    <rect x="24" y="135" width="231" height="6" rx="3" fill="url(#accent)"/>
+
+    <!-- Mini stats -->
+    <g transform="translate(24,160)">
+      <rect width="125" height="54" rx="8" fill="#131b2e" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="12" y="22" fill="#bbc9cd" font-family="Geist, monospace, sans-serif" font-size="10" font-weight="600" letter-spacing="1.5">SPÁNEK</text>
+      <text x="12" y="42" fill="#4de082" font-family="Geist, monospace, sans-serif" font-size="20" font-weight="700">7h 42m</text>
+    </g>
+    <g transform="translate(159,160)">
+      <rect width="137" height="54" rx="8" fill="#131b2e" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="12" y="22" fill="#bbc9cd" font-family="Geist, monospace, sans-serif" font-size="10" font-weight="600" letter-spacing="1.5">HRV</text>
+      <text x="12" y="42" fill="#8aebff" font-family="Geist, monospace, sans-serif" font-size="20" font-weight="700">72 ms</text>
+    </g>
+  </g>
+
+  <!-- antiagehack.cz / antiagehack.vercel.app -->
+  <text x="64" y="610" fill="#859397" font-family="Geist, monospace, sans-serif" font-size="14" font-weight="600" letter-spacing="2">ANTIAGEHACK.CZ</text>
+</svg>

@@ -115,8 +115,90 @@ AAH.initLeadForm = function () {
   });
 };
 
+// ---- Cookie consent ----
+AAH.cookies = {
+  KEY: 'aah_cookie_consent_v1',
+  defaults: { necessary: true, analytics: false, marketing: false, ts: null },
+  get: () => AAH.storage.get('aah_cookie_consent_v1') || null,
+  set: (consent) => {
+    AAH.storage.set('aah_cookie_consent_v1', { ...consent, ts: new Date().toISOString() });
+    // Hook for downstream tools (GA4, Meta Pixel, etc.) – initialise only after consent
+    document.dispatchEvent(new CustomEvent('aah:consent', { detail: consent }));
+  },
+  reset: () => AAH.storage.remove('aah_cookie_consent_v1'),
+};
+
+AAH.initCookieBanner = function () {
+  // Skip on legal pages – we are already on the policy page
+  if (window.location.pathname.startsWith('/legal/')) return;
+  if (AAH.cookies.get()) return;
+
+  const html = `
+    <div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Souhlas s cookies">
+      <h3>Cookies a soukromí</h3>
+      <p>Používáme nezbytné cookies pro fungování webu. S vaším souhlasem také analytické a marketingové, abychom mohli web vylepšovat. Více v <a href="/legal/privacy.html">zásadách ochrany osobních údajů</a>.</p>
+      <div class="cookie-banner-categories">
+        <div class="cookie-cat">
+          <div class="cookie-cat-info">
+            <strong>Nezbytné</strong>
+            <small>Přihlášení, nastavení, bezpečnost. Nejde vypnout.</small>
+          </div>
+          <label class="cookie-toggle"><input type="checkbox" checked disabled><span class="slider"></span></label>
+        </div>
+        <div class="cookie-cat">
+          <div class="cookie-cat-info">
+            <strong>Analytické</strong>
+            <small>Anonymní statistiky návštěvnosti pro zlepšení obsahu.</small>
+          </div>
+          <label class="cookie-toggle"><input type="checkbox" data-cat="analytics"><span class="slider"></span></label>
+        </div>
+        <div class="cookie-cat">
+          <div class="cookie-cat-info">
+            <strong>Marketingové</strong>
+            <small>Personalizace reklam a měření kampaní.</small>
+          </div>
+          <label class="cookie-toggle"><input type="checkbox" data-cat="marketing"><span class="slider"></span></label>
+        </div>
+      </div>
+      <div class="cookie-banner-actions">
+        <button type="button" class="cookie-btn-settings" data-action="toggle-settings">Nastavení</button>
+        <button type="button" class="cookie-btn-reject" data-action="reject">Jen nezbytné</button>
+        <button type="button" class="cookie-btn-accept" data-action="accept">Přijmout vše</button>
+      </div>
+    </div>`;
+  const wrap = document.createElement('div');
+  wrap.innerHTML = html.trim();
+  const banner = wrap.firstElementChild;
+  document.body.appendChild(banner);
+  requestAnimationFrame(() => banner.classList.add('visible'));
+
+  banner.addEventListener('click', (e) => {
+    const action = e.target.closest('[data-action]')?.dataset.action;
+    if (!action) return;
+    if (action === 'toggle-settings') {
+      banner.classList.toggle('show-categories');
+      return;
+    }
+    let consent = { ...AAH.cookies.defaults };
+    if (action === 'accept') {
+      consent.analytics = true;
+      consent.marketing = true;
+    }
+    // Honour individual toggles when settings are open
+    if (banner.classList.contains('show-categories')) {
+      banner.querySelectorAll('input[data-cat]').forEach((cb) => {
+        consent[cb.dataset.cat] = cb.checked;
+      });
+    }
+    AAH.cookies.set(consent);
+    banner.classList.remove('visible');
+    setTimeout(() => banner.remove(), 600);
+  });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   AAH.initFadeIn();
   AAH.initFaq();
   AAH.initLeadForm();
+  AAH.initCookieBanner();
 });
