@@ -50,17 +50,34 @@ Klíčové endpointy (viz Eshopsys repo):
 ## ⚖️ Compliance
 
 Stránka prodává doplňky stravy. Všechen marketing copy splňuje:
-- **Nařízení EU 1924/2006** (health claims) – použity pouze povolené claimy z EU registru
+- **Nařízení EU 1924/2006** (health claims)
 - **Nařízení EU 432/2012** (registr povolených zdravotních tvrzení)
+- **Nařízení EU 1169/2011** (informace pro spotřebitele)
 - **Vyhláška 58/2018 Sb.** (doplňky stravy)
-- **Zákon 40/1995 Sb.** (regulace reklamy)
+- **Zákon 40/1995 Sb.** (regulace reklamy, § 5d zákaz disease claims)
 - **Nařízení 2016/679 (GDPR)** – consent forms, právní šablony
 
-**ZÁKAZÁNO** (a odstraněno z původní verze):
-- Tvrzení o snížení biologického věku
-- Disease prevention/treatment claims
-- Anti-aging marketing claims bez registru
-- Neautorizované health claims (autofagie, NAD+, mitochondrie)
+### Pravidlo: pouze povolené EU registry claims na látky
+- Vitamin D → „přispívá k normální funkci svalů a imunitního systému"
+- Vitamin K → „přispívá k udržení normálního stavu kostí"
+- EPA + DHA (≥250 mg/d) → „přispívá k normální činnosti srdce"
+- DHA (≥250 mg/d) → „přispívá k udržení normální činnosti mozku"
+- Niacin (B3) → „přispívá ke snížení míry únavy a vyčerpání"
+- Hořčík → „přispívá k normální činnosti svalů"
+
+### Pravidlo: žádné neautorizované claims
+Před každou změnou copy projít EU Register of nutrition and health claims
+(https://ec.europa.eu/food/safety/labelling-and-nutrition/claims/register).
+Bez položky v registru → claim nesmí být použit ani parafrázován.
+Disease prevention/treatment claims jsou vždy zakázané (§ 5d zák. 40/1995).
+
+### Compliance proces při změnách obsahu
+1. Žádné claims na konkrétní zdravotní výsledky (čísla redukcí, % zlepšení vitálních funkcí, snížení rizika nemoci, antiage efekty bez EU registru).
+2. Žádné názvy nemocí v marketing kontextu.
+3. U jednotlivých látek pouze EU registry claim (viz výše).
+4. Testimoniály – pouze subjektivní zkušenosti, nikoliv konkrétní zdravotní čísla.
+5. Disclaimer na každé stránce s doplňky stravy a member trackerem.
+6. GDPR consent u všech form submissions s odkazem na zásady.
 
 ## 🚀 Deploy
 
