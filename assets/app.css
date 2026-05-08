@@ -1,0 +1,159 @@
+/* ANTI AGE HACK – Shared base styles
+   Vibe: medical-tech, glassmorphism, deep slate
+*/
+:root {
+  --primary: #8aebff;
+  --secondary: #4de082;
+  --bg: #0b1326;
+  --bg-low: #060e20;
+  --container: #171f33;
+}
+* { -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: #dae2fd;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Glass cards */
+.glass-card {
+  background: rgba(23, 31, 51, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+.glass-card-strong {
+  background: rgba(34, 42, 61, 0.75);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(138, 235, 255, 0.12);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Helix dot grid background */
+.helix-bg {
+  background-image: radial-gradient(circle at 2px 2px, rgba(47, 217, 244, 0.06) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+.helix-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(138, 235, 255, 0.25), transparent);
+}
+
+/* DNA animated helix accent (subtle) */
+.dna-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 40% at 80% 10%, rgba(47, 217, 244, 0.15), transparent 60%),
+    radial-gradient(60% 40% at 0% 100%, rgba(77, 224, 130, 0.12), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Progress ring helpers */
+.progress-ring { transition: stroke-dashoffset 0.4s ease; transform: rotate(-90deg); transform-origin: 50% 50%; }
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #22d3ee 0%, #4de082 100%);
+  color: #00363e;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  padding: 14px 24px;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px -8px rgba(47, 217, 244, 0.5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 32px -8px rgba(47, 217, 244, 0.6); }
+.btn-primary:active { transform: scale(0.98); }
+.btn-ghost {
+  background: rgba(34, 42, 61, 0.4);
+  border: 1px solid rgba(138, 235, 255, 0.18);
+  color: #8aebff;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 13px 24px;
+  backdrop-filter: blur(12px);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.btn-ghost:hover { background: rgba(34, 42, 61, 0.7); }
+
+/* Inputs */
+.input-field {
+  background: rgba(6, 14, 32, 0.7);
+  border: 1px solid rgba(138, 235, 255, 0.15);
+  border-radius: 0.5rem;
+  padding: 14px 16px;
+  color: #dae2fd;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-field::placeholder { color: #859397; font-family: Geist, monospace; }
+.input-field:focus {
+  outline: none;
+  border-color: #8aebff;
+  box-shadow: 0 0 0 4px rgba(138, 235, 255, 0.1);
+}
+
+/* Status pills */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: Geist, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pill-primary { background: rgba(138, 235, 255, 0.15); color: #8aebff; border: 1px solid rgba(138, 235, 255, 0.3); }
+.pill-secondary { background: rgba(77, 224, 130, 0.15); color: #4de082; border: 1px solid rgba(77, 224, 130, 0.3); }
+.pill-warn { background: rgba(255, 180, 171, 0.12); color: #ffb4ab; border: 1px solid rgba(255, 180, 171, 0.3); }
+
+/* Fade-in observer */
+.fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Compliance disclaimer card */
+.disclaimer-box {
+  background: rgba(34, 42, 61, 0.4);
+  border-left: 3px solid #4de082;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #bbc9cd;
+  line-height: 1.5;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Material symbols sizing helper */
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+/* Accessibility focus */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid #8aebff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile { display: none; }
+}

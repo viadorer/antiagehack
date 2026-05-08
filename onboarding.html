@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vstupní dotazník – ANTI AGE HACK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <script src="/assets/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="stylesheet" href="/assets/app.css">
+  <style>
+    .step { display: none; }
+    .step.active { display: block; }
+    .opt {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px; border-radius: 12px;
+      background: rgba(23, 31, 51, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .opt:hover { border-color: rgba(138, 235, 255, 0.3); background: rgba(34, 42, 61, 0.6); }
+    .opt input[type=radio] { accent-color: #8aebff; flex-shrink: 0; }
+    .opt.selected { border-color: #8aebff; background: rgba(138, 235, 255, 0.08); box-shadow: 0 0 0 4px rgba(138, 235, 255, 0.05); }
+  </style>
+</head>
+<body class="helix-bg min-h-screen flex flex-col">
+
+  <header class="px-4 py-4 border-b border-white/5">
+    <div class="max-w-3xl mx-auto flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-2">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+          <span class="material-symbols-outlined text-on-primary" style="font-size:22px;font-variation-settings:'FILL' 1;">genetics</span>
+        </div>
+        <span class="font-data-display text-lg tracking-wider text-white">ANTI AGE <span class="text-primary">HACK</span></span>
+      </a>
+      <span class="text-xs text-on-surface-variant font-label-caps tracking-widest"><span id="stepCounter">1</span>/5</span>
+    </div>
+  </header>
+
+  <!-- Progress bar -->
+  <div class="h-1 bg-surface-container">
+    <div id="progressBar" class="h-full bg-gradient-to-r from-primary to-secondary transition-all" style="width:20%"></div>
+  </div>
+
+  <main class="flex-1 flex items-center justify-center px-4 py-12">
+    <div class="w-full max-w-2xl">
+      <form id="quizForm">
+        <!-- Step 1: Věk -->
+        <div class="step active" data-step="1">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Otázka 1 z 5</p>
+          <h2 class="font-h2 text-h2 text-white mb-2">Kolik vám je let?</h2>
+          <p class="text-on-surface-variant mb-8">Program je optimalizovaný pro muže 45–60 let.</p>
+          <div class="space-y-3">
+            <label class="opt"><input type="radio" name="age" value="under-45" required>Pod 45 let</label>
+            <label class="opt"><input type="radio" name="age" value="45-50" required>45–50 let</label>
+            <label class="opt"><input type="radio" name="age" value="50-55" required>50–55 let</label>
+            <label class="opt"><input type="radio" name="age" value="55-60" required>55–60 let</label>
+            <label class="opt"><input type="radio" name="age" value="over-60" required>Přes 60 let</label>
+          </div>
+        </div>
+
+        <!-- Step 2: Energie -->
+        <div class="step" data-step="2">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Otázka 2 z 5</p>
+          <h2 class="font-h2 text-h2 text-white mb-2">Jak hodnotíte svou energii?</h2>
+          <p class="text-on-surface-variant mb-8">Když si vzpomenete na uplynulé 2 týdny.</p>
+          <div class="space-y-3">
+            <label class="opt"><input type="radio" name="energy" value="excellent" required>Výborná, většinu dne se cítím dobře</label>
+            <label class="opt"><input type="radio" name="energy" value="ok" required>Někdy lepší, někdy horší</label>
+            <label class="opt"><input type="radio" name="energy" value="low" required>Většinou unavený, hlavně odpoledne</label>
+            <label class="opt"><input type="radio" name="energy" value="very-low" required>Vyčerpaný i po probuzení</label>
+          </div>
+        </div>
+
+        <!-- Step 3: Pohyb -->
+        <div class="step" data-step="3">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Otázka 3 z 5</p>
+          <h2 class="font-h2 text-h2 text-white mb-2">Jak často se hýbete?</h2>
+          <p class="text-on-surface-variant mb-8">Strukturovaný pohyb – trénink, sport, rychlá chůze.</p>
+          <div class="space-y-3">
+            <label class="opt"><input type="radio" name="movement" value="daily" required>Téměř denně (5+× týdně)</label>
+            <label class="opt"><input type="radio" name="movement" value="3-4" required>3–4× týdně</label>
+            <label class="opt"><input type="radio" name="movement" value="1-2" required>1–2× týdně</label>
+            <label class="opt"><input type="radio" name="movement" value="rare" required>Občas, nepravidelně</label>
+            <label class="opt"><input type="radio" name="movement" value="none" required>Téměř vůbec</label>
+          </div>
+        </div>
+
+        <!-- Step 4: Spánek -->
+        <div class="step" data-step="4">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Otázka 4 z 5</p>
+          <h2 class="font-h2 text-h2 text-white mb-2">Jak spíte?</h2>
+          <p class="text-on-surface-variant mb-8">Subjektivní hodnocení kvality vašeho spánku.</p>
+          <div class="space-y-3">
+            <label class="opt"><input type="radio" name="sleep" value="great" required>Hluboce, ráno odpočatý</label>
+            <label class="opt"><input type="radio" name="sleep" value="ok" required>Vcelku dobře, ale občas se budím</label>
+            <label class="opt"><input type="radio" name="sleep" value="poor" required>Často přerušovaně, ráno unavený</label>
+            <label class="opt"><input type="radio" name="sleep" value="very-poor" required>Špatně, brzké probouzení nebo nespavost</label>
+          </div>
+        </div>
+
+        <!-- Step 5: Cíl -->
+        <div class="step" data-step="5">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Otázka 5 z 5</p>
+          <h2 class="font-h2 text-h2 text-white mb-2">Co je váš hlavní cíl?</h2>
+          <p class="text-on-surface-variant mb-8">Vyberte to, co je pro vás teď nejdůležitější.</p>
+          <div class="space-y-3">
+            <label class="opt"><input type="radio" name="goal" value="energy" required>Mít více energie přes den</label>
+            <label class="opt"><input type="radio" name="goal" value="weight" required>Optimalizovat tělesné složení</label>
+            <label class="opt"><input type="radio" name="goal" value="performance" required>Zlepšit fyzickou kondici a výkon</label>
+            <label class="opt"><input type="radio" name="goal" value="sleep" required>Lepší spánek a regenerace</label>
+            <label class="opt"><input type="radio" name="goal" value="prevention" required>Dlouhodobá vitalita a prevence</label>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-between mt-10">
+          <button type="button" id="prevBtn" class="btn-ghost" disabled style="opacity:0.4;">
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_back</span>
+            Zpět
+          </button>
+          <button type="button" id="nextBtn" class="btn-primary">
+            Pokračovat
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="py-6 text-center text-xs text-on-surface-variant">
+    🔒 Vaše odpovědi jsou v bezpečí. Slouží pouze k personalizaci doporučení.
+  </footer>
+
+  <script src="/assets/app.js"></script>
+  <script>
+    let currentStep = 1;
+    const totalSteps = 5;
+
+    function showStep(step) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.querySelector(`[data-step="${step}"]`).classList.add('active');
+      document.getElementById('stepCounter').textContent = step;
+      document.getElementById('progressBar').style.width = (step / totalSteps * 100) + '%';
+      document.getElementById('prevBtn').disabled = step === 1;
+      document.getElementById('prevBtn').style.opacity = step === 1 ? '0.4' : '1';
+      const next = document.getElementById('nextBtn');
+      if (step === totalSteps) {
+        next.innerHTML = '<span class="material-symbols-outlined" style="font-size:18px;">check</span> Dokončit a vidět výsledky';
+      } else {
+        next.innerHTML = 'Pokračovat <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>';
+      }
+    }
+
+    // Selection visual feedback
+    document.querySelectorAll('.opt input[type=radio]').forEach(input => {
+      input.addEventListener('change', () => {
+        document.querySelectorAll(`.opt input[name="${input.name}"]`).forEach(i => {
+          i.closest('.opt').classList.toggle('selected', i.checked);
+        });
+      });
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      if (currentStep > 1) { currentStep--; showStep(currentStep); }
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', async () => {
+      const stepEl = document.querySelector(`[data-step="${currentStep}"]`);
+      const radio = stepEl.querySelector('input[type=radio]:checked');
+      if (!radio) {
+        alert('Vyberte prosím jednu z možností.');
+        return;
+      }
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        // Submit
+        const form = document.getElementById('quizForm');
+        const data = Object.fromEntries(new FormData(form));
+        AAH.storage.set('quiz_result', { ...data, completed_at: new Date().toISOString() });
+        // TODO: send to Eshopsys: AAH.api('/quiz/submit', { method: 'POST', body: JSON.stringify(data) })
+        window.location.href = '/app/dashboard.html';
+      }
+    });
+  </script>
+</body>
+</html>

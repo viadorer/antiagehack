@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – ANTI AGE HACK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <script src="/assets/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body class="helix-bg">
+  <header class="px-4 py-4 border-b border-white/5">
+    <div class="max-w-3xl mx-auto flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-2">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+          <span class="material-symbols-outlined text-on-primary" style="font-size:22px;font-variation-settings:'FILL' 1;">genetics</span>
+        </div>
+        <span class="font-data-display text-lg tracking-wider text-white">ANTI AGE <span class="text-primary">HACK</span></span>
+      </a>
+      <a href="/" class="text-sm text-on-surface-variant hover:text-primary">← Zpět na úvod</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Kontakt</p>
+    <h1 class="font-h1 text-h2 text-white mb-8">Ozvěte se nám</h1>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+      <div class="glass-card rounded-xl p-6">
+        <div class="w-12 h-12 rounded-lg bg-primary/15 flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-primary">mail</span>
+        </div>
+        <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-2">E-mail</p>
+        <a href="mailto:hello@antiagehack.cz" class="text-h3 font-h3 text-white hover:text-primary">hello@antiagehack.cz</a>
+        <p class="text-xs text-on-surface-variant mt-2">Odpovídáme do 24 hodin v pracovní dny.</p>
+      </div>
+      <div class="glass-card rounded-xl p-6">
+        <div class="w-12 h-12 rounded-lg bg-secondary/15 flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-secondary">support_agent</span>
+        </div>
+        <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-2">Podpora pro členy</p>
+        <a href="mailto:support@antiagehack.cz" class="text-h3 font-h3 text-white hover:text-secondary">support@antiagehack.cz</a>
+        <p class="text-xs text-on-surface-variant mt-2">Pokud jste členem programu, napište sem.</p>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-xl p-6 mb-8">
+      <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-3">Provozovatel</p>
+      <p class="text-on-surface text-body-md leading-relaxed">
+        <strong class="text-white">[Jméno / Název firmy]</strong><br>
+        IČO: <strong>[doplnit]</strong>, DIČ: <strong>[doplnit]</strong><br>
+        Sídlo: <strong>[doplnit adresu]</strong><br>
+        Zapsán: <strong>[OR / živnostenský rejstřík]</strong>
+      </p>
+    </div>
+
+    <div class="glass-card-strong rounded-2xl p-8">
+      <h2 class="font-h2 text-h3 text-white mb-4">Napište nám</h2>
+      <form id="contactForm" class="space-y-3">
+        <input class="input-field" type="text" name="name" placeholder="Jméno" required>
+        <input class="input-field" type="email" name="email" placeholder="E-mail" required>
+        <select class="input-field" name="topic" required>
+          <option value="">Téma…</option>
+          <option value="info">Obecné informace</option>
+          <option value="member">Dotaz k programu</option>
+          <option value="press">Tisk / spolupráce</option>
+          <option value="other">Jiné</option>
+        </select>
+        <textarea class="input-field" name="message" placeholder="Vaše zpráva" rows="5" required></textarea>
+        <label class="flex gap-3 items-start text-xs text-on-surface-variant cursor-pointer pt-2">
+          <input type="checkbox" name="gdpr" required class="mt-1 accent-primary flex-shrink-0">
+          <span>Souhlasím se zpracováním osobních údajů pro účely odpovědi na zprávu dle <a href="/legal/privacy.html" class="text-primary underline">zásad ochrany osobních údajů</a>.</span>
+        </label>
+        <button type="submit" class="btn-primary w-full mt-4">
+          <span class="material-symbols-outlined" style="font-size:20px;">send</span>
+          Odeslat zprávu
+        </button>
+        <p id="contactStatus" class="text-sm mt-2"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/5 py-8 text-center text-xs text-on-surface-variant">
+    © 2026 ANTI AGE HACK · <a href="/legal/privacy.html" class="hover:text-primary">Ochrana OÚ</a> · <a href="/legal/terms.html" class="hover:text-primary">VOP</a>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = document.getElementById('contactStatus');
+      status.textContent = 'Zpráva odeslána. Ozveme se vám do 24 hodin.';
+      status.className = 'text-sm text-secondary mt-2';
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

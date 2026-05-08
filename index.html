@@ -1,407 +1,575 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANTI AGE HACK – Zpomalte své biologické stárnutí</title>
-    <meta name="description" content="5 vědecky ověřených hacků, které zpomalí vaše biologické stárnutí. Program pro muže 45-60 let.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ANTI AGE HACK – Přesnost, vitalita a energie pro muže 45–60 let</title>
+  <meta name="description" content="Strukturovaný 26týdenní program pro muže 45–60 let. Pět pilířů životního stylu, biometrický tracker, cílená suplementace. Bez extrémů, s důrazem na to, co skutečně funguje.">
+  <meta property="og:title" content="ANTI AGE HACK – Přesnost, vitalita a energie">
+  <meta property="og:description" content="26týdenní program pro muže 45–60 let. 5 pilířů životního stylu, biometrický tracker, cílená suplementace.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+
+  <script src="/assets/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="stylesheet" href="/assets/app.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="container">
-            <div class="nav-content">
-                <a href="#" class="nav-logo">
-                    <span class="logo-text" id="logoNav">ANTI AGE HACK</span>
-                </a>
-                <a href="#assessment" class="nav-cta">Získat Assessment</a>
-            </div>
-        </div>
+<body class="helix-bg">
+
+<!-- TOP NAV -->
+<header class="sticky top-0 z-50 bg-surface/70 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="flex items-center gap-2 group">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-primary" style="font-size:22px;font-variation-settings:'FILL' 1;">genetics</span>
+      </div>
+      <span class="font-data-display text-lg tracking-wider text-white">ANTI AGE <span class="text-primary">HACK</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-on-surface-variant">
+      <a href="#hacks" class="hover:text-primary transition">5 pilířů</a>
+      <a href="#program" class="hover:text-primary transition">Program</a>
+      <a href="#faq" class="hover:text-primary transition">FAQ</a>
+      <a href="/login.html" class="hover:text-primary transition">Přihlásit</a>
     </nav>
+    <a href="#assessment" class="btn-primary text-sm" style="padding:10px 18px;">Začít zdarma</a>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-image">
-            <img src="images/hero/hero.png" alt="DNA Helix">
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                                <span class="hero-eyebrow">Pro muže 45–60 let</span>
-                <h1>Cítíte se unavení, ztuhlí a starší, <span>než byste měli?</span></h1>
-                <p class="hero-subtitle">Zjistěte, proč vaše tělo stárne rychleji než vaši vrstevníci – a jak to během 6 měsíců otočit pomocí 5 vědecky ověřených hacků.</p>
-                <div class="hero-cta-group">
-                    <a href="#assessment" class="btn-primary">Zjistit svůj biologický věk</a>
-                    <a href="#hacks" class="btn-secondary">Jak to funguje</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <div class="hero-stat-number">80%</div>
-                        <div class="hero-stat-label">stárnutí ovlivníte sami</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-number">2-5</div>
-                        <div class="hero-stat-label">let biologického věku dolů</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-number">6</div>
-                        <div class="hero-stat-label">měsíců do výsledků</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-32">
+  <div class="dna-glow"></div>
+  <div class="absolute inset-0 opacity-[0.04] pointer-events-none">
+    <span class="material-symbols-outlined absolute right-[-100px] top-10 text-primary" style="font-size:600px;font-variation-settings:'FILL' 1;">genetics</span>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-primary/30 mb-6">
+        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Pro muže 45–60 let</span>
+      </div>
+      <h1 class="font-h1 text-h1 md:text-[64px] leading-[1.05] text-white">
+        Cítíte, že máte<br>
+        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">méně energie než dřív?</span>
+      </h1>
+      <p class="mt-6 font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+        Strukturovaný 26týdenní program pro muže ve středním věku. Pět pilířů životního stylu, osobní tracker a cílená suplementace. Bez extrémů, bez zázračných slibů – jen to, co opakovaně funguje.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#assessment" class="btn-primary">
+          <span class="material-symbols-outlined" style="font-size:20px;">arrow_forward</span>
+          Vyplnit vstupní dotazník
+        </a>
+        <a href="#hacks" class="btn-ghost">Jak to funguje</a>
+      </div>
 
-    <!-- Pain Section -->
-    <section class="pain" id="problem">
-        <div class="container">
-            <span class="section-label">Poznejte pravdu</span>
-            <h2>Tohle vás možná trápí víc, než si připouštíte...</h2>
-            <div class="pain-grid">
-                <div class="pain-card fade-in">
-                    <div class="pain-icon">01</div>
-                    <h3>Ráno vstáváte vyčerpaní</h3>
-                    <p>I po 8 hodinách spánku se cítíte, jako byste nespali vůbec. Káva už nezabírá jako dřív.</p>
-                </div>
-                <div class="pain-card fade-in">
-                    <div class="pain-icon">02</div>
-                    <h3>V zrcadle vidíte cizince</h3>
-                    <p>Povislá kůže, šedivé vlasy, břicho které nezmizí. Vypadáte starší než vaši vrstevníci.</p>
-                </div>
-                <div class="pain-card fade-in">
-                    <div class="pain-icon">03</div>
-                    <h3>Mozek už nefunguje jako dřív</h3>
-                    <p>Zapomínáte jména, ztrácíte věci, těžko se soustředíte. "Mozkovou mlhu" znáte až příliš dobře.</p>
-                </div>
-                <div class="pain-card fade-in">
-                    <div class="pain-icon">04</div>
-                    <h3>Tělo bolí bez důvodu</h3>
-                    <p>Záda, kolena, ramena. Každé ráno nová bolest. Pohyb je teď boj.</p>
-                </div>
-                <div class="pain-card fade-in">
-                    <div class="pain-icon">05</div>
-                    <h3>Výkonnost klesá</h3>
-                    <p>V práci i v životě. Mladší kolegové vás předbíhají. Máte pocit, že váš nejlepší čas už byl.</p>
-                </div>
-                <div class="pain-card fade-in">
-                    <div class="pain-icon">06</div>
-                    <h3>Čas běží a vy stojíte</h3>
-                    <p>Každý rok je horší než předchozí. Bojíte se, co přijde za 5, 10, 20 let.</p>
-                </div>
-            </div>
+      <!-- Hero stats -->
+      <div class="mt-12 grid grid-cols-3 gap-4 max-w-lg">
+        <div class="glass-card rounded-xl p-4">
+          <p class="font-data-display text-data-display text-primary">5</p>
+          <p class="text-xs text-on-surface-variant mt-1">pilířů životního stylu</p>
         </div>
-    </section>
-
-    <!-- Agitation Section -->
-    <section class="agitation">
-        <div class="container-narrow">
-            <span class="section-label">Tvrdá realita</span>
-            <h2>Pokud neuděláte nic, takhle bude vypadat váš příští dekáda:</h2>
-            <p class="agitation-highlight">Každý rok ztratíte 1% svalové hmoty, 2% kostní hustoty a vaše mitochondrie pracují o 10% hůř.</p>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-age">50</div>
-                    <div class="timeline-desc">Únava, první bolesti</div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-age">55</div>
-                    <div class="timeline-desc">Chronické problémy, léky</div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-age">60</div>
-                    <div class="timeline-desc">Závislost na systému</div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-age">65+</div>
-                    <div class="timeline-desc">Ztráta nezávislosti</div>
-                </div>
-            </div>
+        <div class="glass-card rounded-xl p-4">
+          <p class="font-data-display text-data-display text-secondary">26</p>
+          <p class="text-xs text-on-surface-variant mt-1">týdnů programu</p>
         </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section class="social-proof">
-        <div class="container">
-            <div class="proof-grid">
-                <div class="proof-item fade-in">
-                    <div class="proof-number">2-5</div>
-                    <div class="proof-label">let biologického věku dolů</div>
-                </div>
-                <div class="proof-item fade-in">
-                    <div class="proof-number">80%</div>
-                    <div class="proof-label">stárnutí je ve vašich rukou</div>
-                </div>
-                <div class="proof-item fade-in">
-                    <div class="proof-number">15-25%</div>
-                    <div class="proof-label">nárůst VO2 max</div>
-                </div>
-                <div class="proof-item fade-in">
-                    <div class="proof-number">Nobel</div>
-                    <div class="proof-label">Cena 2016 za autofagii</div>
-                </div>
-            </div>
+        <div class="glass-card rounded-xl p-4">
+          <p class="font-data-display text-data-display text-primary">45–60</p>
+          <p class="text-xs text-on-surface-variant mt-1">cílový věk</p>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Solution / Hacks Section -->
-    <section class="solution" id="hacks">
-        <div class="container">
-            <div class="solution-header">
-                <span class="section-label">Řešení existuje</span>
-                <h2>5 Anti-Age Hacků, které změní vaše stárnutí</h2>
-                <p class="solution-subtitle">Vědecky ověřené protokoly, které můžete začít aplikovat ještě dnes.</p>
+    <!-- Hero card mock -->
+    <div class="relative">
+      <div class="glass-card-strong rounded-2xl p-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none"></div>
+        <div class="relative">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Vitality Score</p>
+              <p class="font-data-display text-[56px] leading-none text-white">85<span class="text-h3 text-on-surface-variant">/100</span></p>
             </div>
-            <div class="hacks-grid">
-                <div class="hack-card fade-in">
-                    <div class="hack-number">H1</div>
-                    <div class="hack-content">
-                        <h3>Metabolický Hack</h3>
-                        <div class="hack-tagline">Změňte KDY jíte, ne CO jíte</div>
-                        <p>Časově omezené jídlo aktivuje autofagii – váš vnitřní "úklidový systém". Glukózové špičky způsobují záněty a poškozují tkáně.</p>
-                        <div class="hack-benefits">
-                            <span class="hack-benefit">16:8 protokol</span>
-                            <span class="hack-benefit">Stabilní energie</span>
-                            <span class="hack-benefit">Méně zánětů</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hack-card fade-in">
-                    <div class="hack-number">H2</div>
-                    <div class="hack-content">
-                        <h3>Pohybový Hack</h3>
-                        <div class="hack-tagline">80% nízkointenzivní, 20% vysokointenzivní</div>
-                        <p>Svaly jsou metabolický orgán. Mitochondrie jsou "elektrárny" buněk – více a zdravějších mitochondrií = více energie.</p>
-                        <div class="hack-benefits">
-                            <span class="hack-benefit">Zóna 2 trénink</span>
-                            <span class="hack-benefit">Silový trénink</span>
-                            <span class="hack-benefit">HIIT 1× týdně</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hack-card fade-in">
-                    <div class="hack-number">H3</div>
-                    <div class="hack-content">
-                        <h3>Spánkový Hack</h3>
-                        <div class="hack-tagline">Spánek je detox pro mozek</div>
-                        <p>Mozek během spánku vyplavuje toxické proteiny spojené s Alzheimerem. Kvalitní spánek je základ všeho.</p>
-                        <div class="hack-benefits">
-                            <span class="hack-benefit">7-9 hodin</span>
-                            <span class="hack-benefit">Temná místnost</span>
-                            <span class="hack-benefit">16-18°C</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hack-card fade-in">
-                    <div class="hack-number">H4</div>
-                    <div class="hack-content">
-                        <h3>Stresový Hack (Hormeze)</h3>
-                        <div class="hack-tagline">Kontrolovaný stres aktivuje geny dlouhověkosti</div>
-                        <p>"Co nás nezabije, to nás posílí" – tělo reaguje na kontrolovaný stres adaptací a posilováním systémů.</p>
-                        <div class="hack-benefits">
-                            <span class="hack-benefit">Sauna 4× týdně</span>
-                            <span class="hack-benefit">Studené sprchy</span>
-                            <span class="hack-benefit">Adaptace</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hack-card fade-in">
-                    <div class="hack-number">H5</div>
-                    <div class="hack-content">
-                        <h3>Suplementační Hack</h3>
-                        <div class="hack-tagline">3-5 správných suplementů > 20 náhodných</div>
-                        <p>Cílená suplementace může podpořit to, co děláte správně. NAD+ prekurzory, Omega-3, Vitamin D3+K2.</p>
-                        <div class="hack-benefits">
-                            <span class="hack-benefit">NAD+ prekurzory</span>
-                            <span class="hack-benefit">Omega-3</span>
-                            <span class="hack-benefit">D3+K2</span>
-                        </div>
-                    </div>
-                </div>
+            <span class="pill pill-secondary"><span class="material-symbols-outlined" style="font-size:14px;">trending_up</span> +12% / 30 dnů</span>
+          </div>
+
+          <div class="w-full bg-surface-container-highest rounded-full h-1.5 mb-6">
+            <div class="bg-gradient-to-r from-primary to-secondary h-full rounded-full" style="width:85%"></div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-surface-container-low rounded-lg p-3 border border-white/5">
+              <p class="font-label-caps text-[10px] text-on-surface-variant tracking-widest">SPÁNEK</p>
+              <p class="font-data-display text-h3 text-secondary">7h 42m</p>
             </div>
+            <div class="bg-surface-container-low rounded-lg p-3 border border-white/5">
+              <p class="font-label-caps text-[10px] text-on-surface-variant tracking-widest">HRV</p>
+              <p class="font-data-display text-h3 text-primary">72 ms</p>
+            </div>
+            <div class="bg-surface-container-low rounded-lg p-3 border border-white/5">
+              <p class="font-label-caps text-[10px] text-on-surface-variant tracking-widest">POHYB</p>
+              <p class="font-data-display text-h3 text-primary">8 240</p>
+            </div>
+            <div class="bg-surface-container-low rounded-lg p-3 border border-white/5">
+              <p class="font-label-caps text-[10px] text-on-surface-variant tracking-widest">VO2 MAX</p>
+              <p class="font-data-display text-h3 text-secondary">42.1</p>
+            </div>
+          </div>
+          <p class="mt-4 text-xs text-on-surface-variant">Ukázka member dashboardu. Hodnoty zadáváte vy nebo se sync z Apple Health / Garmin.</p>
         </div>
-    </section>
+      </div>
 
-    <!-- Transformation Section -->
-    <section class="transformation">
-        <div class="container">
-            <span class="section-label">Vaše transformace</span>
-            <h2>Za 6 měsíců budete jiný člověk</h2>
-            <div class="transform-comparison">
-                <div class="transform-box before fade-in">
-                    <div class="transform-label">Před programem</div>
-                    <ul class="transform-list">
-                        <li>Chronická únava a vyčerpání</li>
-                        <li>Mozková mlha a zapomnětlivost</li>
-                        <li>Bolesti kloubů a zad</li>
-                        <li>Přibývání na váze</li>
-                        <li>Špatný spánek</li>
-                        <li>Strach z budoucnosti</li>
-                    </ul>
-                </div>
-                <div class="transform-arrow">→</div>
-                <div class="transform-box after fade-in">
-                    <div class="transform-label">Po 6 měsících</div>
-                    <ul class="transform-list">
-                        <li>Stabilní energie celý den</li>
-                        <li>Ostrá mysl a soustředění</li>
-                        <li>Pohyblivost bez bolesti</li>
-                        <li>Optimální tělesné složení</li>
-                        <li>Hluboký regenerační spánek</li>
-                        <li>Kontrola nad svým stárnutím</li>
-                    </ul>
-                </div>
-            </div>
+      <!-- Floating ribbon -->
+      <div class="absolute -bottom-4 -left-4 glass-card rounded-xl px-4 py-3 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-secondary">verified_user</span>
         </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works" id="program">
-        <div class="container">
-            <div class="how-header">
-                <span class="section-label">Jak to funguje</span>
-                <h2>3 fáze k biologickému mládí</h2>
-            </div>
-            <div class="phases-grid">
-                <div class="phase-card fade-in">
-                    <span class="phase-badge">FÁZE 1</span>
-                    <div class="phase-icon">1</div>
-                    <h3>Diagnostika</h3>
-                    <p>Týdny 1-4: Zjistíme vaše biologické ukazatele, metabolické zdraví a identifikujeme rizika.</p>
-                </div>
-                <div class="phase-card fade-in">
-                    <span class="phase-badge">FÁZE 2</span>
-                    <div class="phase-icon">2</div>
-                    <h3>Implementace</h3>
-                    <p>Týdny 5-12: Postupně budujeme návyky ve všech pěti pilířích. Jeden po druhém.</p>
-                </div>
-                <div class="phase-card fade-in">
-                    <span class="phase-badge">FÁZE 3</span>
-                    <div class="phase-icon">3</div>
-                    <h3>Optimalizace</h3>
-                    <p>Týdny 13-24: Upravujeme protokol na základě vašich výsledků a měříme pokrok.</p>
-                </div>
-            </div>
+        <div>
+          <p class="text-sm text-white font-semibold">EU compliant</p>
+          <p class="text-xs text-on-surface-variant">GDPR + Nař. 1924/2006</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="testimonials-header">
-                <span class="section-label">Příběhy změny</span>
-                <h2>Co říkají ti, kteří to zkusili</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-quote">"Po 6 měsících mám biologický věk o 4 roky nižší. Energie mám jako ve 40, přitom mi je 54."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">M</div>
-                        <div class="testimonial-info">
-                            <h4>Martin K.</h4>
-                            <p>54 let, manažer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-quote">"Změnil jsem jen timing jídla a spánku – a výsledky jsou neuvěřitelné. Mozková mlha je pryč."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">P</div>
-                        <div class="testimonial-info">
-                            <h4>Petr S.</h4>
-                            <p>48 let, podnikatel</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-quote">"Myslel jsem, že bolesti zad jsou normální. Teď běhám a cítím se líp než před 10 lety."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">J</div>
-                        <div class="testimonial-info">
-                            <h4>Jan V.</h4>
-                            <p>57 let, IT specialista</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- HELIX DIVIDER -->
+<div class="max-w-7xl mx-auto px-4"><div class="helix-divider opacity-30"></div></div>
+
+<!-- PAIN -->
+<section class="py-24" id="problem">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-3xl mb-12 fade-in">
+      <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-3">Možná to znáte</p>
+      <h2 class="font-h2 text-h2 md:text-[44px] text-white">Pocity, se kterými se po čtyřicítce potkává <span class="text-primary">většina mužů</span></h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Pain card template -->
+      <div class="glass-card rounded-xl p-6 fade-in">
+        <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-primary">bedtime</span>
         </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="faq-header">
-                <span class="section-label">Časté otázky</span>
-                <h2>Máte otázky? Máme odpovědi.</h2>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <button class="faq-question">Je to pro mě, když mám 53 let a nikdy jsem se tímto nezabýval?</button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">Ano, to je přesně ideální okamžik. Největší dopady se projevují u lidí 45-60 let.</div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Potřebuji speciální vybavení nebo drahé suplementy?</button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">Ne. 80% výsledků získáte ze základních pilířů (jídlo, pohyb, spánek).</div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Kolik času to denně zabere?</button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">Zpočátku 30-60 minut denně. Jakmile jsou návyky zavedené, většina se děje automaticky.</div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Jaké výsledky mohu reálně očekávat?</button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">Snížení biologického věku o 2-5 let, zlepšení krevních markerů, zvýšení VO2 max o 15-25%.</div>
-                    </div>
-                </div>
-            </div>
+        <h3 class="font-h3 text-h3 text-white mb-2">Ráno vstáváte unavení</h3>
+        <p class="text-on-surface-variant">I po dostatku spánku se necítíte odpočatí. Káva už není to, co bývala.</p>
+      </div>
+      <div class="glass-card rounded-xl p-6 fade-in">
+        <div class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-secondary">monitor_heart</span>
         </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="final-cta" id="assessment">
-        <div class="container-narrow">
-            <div class="final-cta-content">
-                <span class="cta-urgency">Váš biologický věk se každý den mění</span>
-                <h2>Zjistěte, kde jste a kam můžete dojít</h2>
-                <p class="final-cta-subtitle">Získejte zdarma 15minutový ANTI AGE HACK Assessment.</p>
-                <form class="cta-form" id="leadForm">
-                    <input type="text" name="name" placeholder="Vaše jméno" required>
-                    <input type="email" name="email" placeholder="Váš email" required>
-                    <button type="submit" class="btn-primary">Získat Assessment zdarma →</button>
-                </form>
-                <p class="cta-privacy">Vaše údaje jsou v bezpečí. Žádný spam.</p>
-            </div>
+        <h3 class="font-h3 text-h3 text-white mb-2">Tělo není, co bývalo</h3>
+        <p class="text-on-surface-variant">Postava se mění, oblečení sedí jinak. V zrcadle vidíte víc let, než byste čekali.</p>
+      </div>
+      <div class="glass-card rounded-xl p-6 fade-in">
+        <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-primary">psychology</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-text" id="logoFooter">ANTI AGE HACK</span>
-                </div>
-                <div class="footer-links">
-                    <a href="#hacks">5 Hacků</a>
-                    <a href="#program">Program</a>
-                    <a href="#faq">FAQ</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="disclaimer"><strong>Právní upozornění:</strong> Tento program není lékařskou službou a nenahrazuje konzultaci s lékařem. Veškeré informace jsou pouze edukační.</p>
-                <p class="copyright">© 2025 ANTI AGE HACK. Všechna práva vyhrazena.</p>
-            </div>
+        <h3 class="font-h3 text-h3 text-white mb-2">Hůř se soustředíte</h3>
+        <p class="text-on-surface-variant">Zapomínáte drobnosti, večer už toho moc nevymyslíte. Hlava jede pomaleji než dřív.</p>
+      </div>
+      <div class="glass-card rounded-xl p-6 fade-in">
+        <div class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-secondary">accessibility_new</span>
         </div>
-    </footer>
+        <h3 class="font-h3 text-h3 text-white mb-2">Tělo se ozývá</h3>
+        <p class="text-on-surface-variant">Záda po sezení, ztuhlá kolena ráno, ramena po práci u počítače. Drobnosti se sčítají.</p>
+      </div>
+      <div class="glass-card rounded-xl p-6 fade-in">
+        <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-primary">trending_down</span>
+        </div>
+        <h3 class="font-h3 text-h3 text-white mb-2">Výkon klesá</h3>
+        <p class="text-on-surface-variant">V práci, ve sportu, doma. Cítíte, že do toho dáváte víc, ale výsledek je menší.</p>
+      </div>
+      <div class="glass-card rounded-xl p-6 fade-in">
+        <div class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-secondary">change_history</span>
+        </div>
+        <h3 class="font-h3 text-h3 text-white mb-2">Chcete to změnit</h3>
+        <p class="text-on-surface-variant">Hledáte konkrétní postup, ne další všeobecné rady „jezte zdravě a hýbejte se".</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- AGITATION / WHY NOW -->
+<section class="py-24 relative">
+  <div class="dna-glow opacity-50"></div>
+  <div class="relative max-w-3xl mx-auto px-4 text-center fade-in">
+    <p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-3">Proč právě teď</p>
+    <h2 class="font-h2 text-h2 md:text-[40px] text-white">Životní styl tvoří většinu toho, jak se za 10 let budete cítit</h2>
+    <p class="mt-6 text-body-lg text-on-surface-variant">To, co děláte mezi 45. a 60. rokem, ovlivní víc, než si dnes připouštíte. Dobrá zpráva: většinu toho máte ve svých rukou.</p>
+
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="glass-card rounded-xl p-5 text-left">
+        <p class="font-data-display text-h3 text-primary">45+</p>
+        <p class="text-sm text-on-surface-variant mt-1">Tělo začíná dávat signály</p>
+      </div>
+      <div class="glass-card rounded-xl p-5 text-left">
+        <p class="font-data-display text-h3 text-primary">50+</p>
+        <p class="text-sm text-on-surface-variant mt-1">Zvyky se podepisují</p>
+      </div>
+      <div class="glass-card rounded-xl p-5 text-left">
+        <p class="font-data-display text-h3 text-secondary">55+</p>
+        <p class="text-sm text-on-surface-variant mt-1">Výsledky jsou vidět</p>
+      </div>
+      <div class="glass-card rounded-xl p-5 text-left">
+        <p class="font-data-display text-h3 text-secondary">60+</p>
+        <p class="text-sm text-on-surface-variant mt-1">Sklízíte, co jste zaseli</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 HACKS / PILLARS -->
+<section class="py-24" id="hacks">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-3xl mb-12 fade-in">
+      <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-3">Náš přístup</p>
+      <h2 class="font-h2 text-h2 md:text-[44px] text-white">5 pilířů, na kterých <span class="text-secondary">společně pracujeme</span></h2>
+      <p class="mt-4 text-body-lg text-on-surface-variant">Žádné extrémy ani módní diety. Konkrétní každodenní návyky, které jdou udržet i u plné práce a rodiny.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Hack 1 -->
+      <div class="glass-card rounded-2xl p-6 fade-in relative overflow-hidden">
+        <div class="absolute -right-6 -top-6 opacity-10">
+          <span class="material-symbols-outlined text-primary" style="font-size:140px;font-variation-settings:'FILL' 1;">restaurant</span>
+        </div>
+        <div class="relative">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Pilíř 01</p>
+          <h3 class="font-h3 text-h3 text-white mb-2">Stravovací režim</h3>
+          <p class="text-on-surface-variant text-sm mb-4">Pravidelnost a kvalita, ne počítání kalorií. Cílem je stabilní energie přes celý den.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill pill-primary">Pravidelný režim</span>
+            <span class="pill pill-primary">Bílkoviny</span>
+            <span class="pill pill-primary">Méně cukru</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hack 2 -->
+      <div class="glass-card rounded-2xl p-6 fade-in relative overflow-hidden">
+        <div class="absolute -right-6 -top-6 opacity-10">
+          <span class="material-symbols-outlined text-secondary" style="font-size:140px;font-variation-settings:'FILL' 1;">directions_run</span>
+        </div>
+        <div class="relative">
+          <p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-2">Pilíř 02</p>
+          <h3 class="font-h3 text-h3 text-white mb-2">Pohyb a kondice</h3>
+          <p class="text-on-surface-variant text-sm mb-4">Síla, vytrvalost a mobilita v rovnováze. Tři krátké tréninky týdně, které dají smysl.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill pill-secondary">Silový</span>
+            <span class="pill pill-secondary">Aerobní</span>
+            <span class="pill pill-secondary">Mobilita</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hack 3 -->
+      <div class="glass-card rounded-2xl p-6 fade-in relative overflow-hidden">
+        <div class="absolute -right-6 -top-6 opacity-10">
+          <span class="material-symbols-outlined text-primary" style="font-size:140px;font-variation-settings:'FILL' 1;">bedtime</span>
+        </div>
+        <div class="relative">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Pilíř 03</p>
+          <h3 class="font-h3 text-h3 text-white mb-2">Spánek a regenerace</h3>
+          <p class="text-on-surface-variant text-sm mb-4">Nejvíce podceňovaný nástroj, jak se cítit lépe. Pracujeme na rutině, prostředí a večerech.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill pill-primary">7–9 hodin</span>
+            <span class="pill pill-primary">Tmavá ložnice</span>
+            <span class="pill pill-primary">Pravidelnost</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hack 4 -->
+      <div class="glass-card rounded-2xl p-6 fade-in relative overflow-hidden">
+        <div class="absolute -right-6 -top-6 opacity-10">
+          <span class="material-symbols-outlined text-secondary" style="font-size:140px;font-variation-settings:'FILL' 1;">thermostat</span>
+        </div>
+        <div class="relative">
+          <p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-2">Pilíř 04</p>
+          <h3 class="font-h3 text-h3 text-white mb-2">Práce se stresem</h3>
+          <p class="text-on-surface-variant text-sm mb-4">Sauna, otužování, dechová cvičení. Nástroje, které používá řada vrcholových sportovců.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill pill-secondary">Sauna</span>
+            <span class="pill pill-secondary">Studená voda</span>
+            <span class="pill pill-secondary">Dech</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hack 5 -->
+      <div class="glass-card rounded-2xl p-6 fade-in relative overflow-hidden lg:col-span-2">
+        <div class="absolute -right-6 -top-6 opacity-10">
+          <span class="material-symbols-outlined text-primary" style="font-size:140px;font-variation-settings:'FILL' 1;">pill</span>
+        </div>
+        <div class="relative">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Pilíř 05</p>
+          <h3 class="font-h3 text-h3 text-white mb-2">Cílená suplementace</h3>
+          <p class="text-on-surface-variant text-sm mb-4">3–5 promyšlených doplňků místo 20 náhodných. S důrazem na kvalitu a kombinace, které dávají smysl.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="pill pill-primary">Vitamin D3 + K2</span>
+            <span class="pill pill-primary">Omega-3 (EPA/DHA)</span>
+            <span class="pill pill-primary">B-komplex</span>
+            <span class="pill pill-primary">Hořčík</span>
+          </div>
+          <div class="disclaimer-box">
+            <strong class="text-on-surface">Doplňky stravy nenahrazují pestrou stravu.</strong> Vitamin&nbsp;D přispívá k normální funkci svalů a imunitního systému; vitamin&nbsp;K přispívá k udržení normálního stavu kostí; EPA a DHA přispívají k normální činnosti srdce (při příjmu min.&nbsp;250&nbsp;mg/den); niacin (B3) přispívá ke snížení míry únavy a vyčerpání; hořčík přispívá k normální činnosti svalů.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION -->
+<section class="py-24">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="text-center mb-12 fade-in">
+      <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-3">Cíl programu</p>
+      <h2 class="font-h2 text-h2 md:text-[40px] text-white">Kam vás chceme za <span class="text-primary">26 týdnů</span> dostat</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 fade-in">
+      <div class="glass-card rounded-2xl p-6 border-l-4 border-error/50">
+        <p class="font-label-caps text-label-caps text-error uppercase tracking-widest mb-4">Dnes</p>
+        <ul class="space-y-3 text-on-surface-variant">
+          <li class="flex gap-3"><span class="material-symbols-outlined text-error/70" style="font-size:20px;">close</span>Únava i po probuzení</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-error/70" style="font-size:20px;">close</span>Hůř se soustředíte</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-error/70" style="font-size:20px;">close</span>Tělo se ozývá</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-error/70" style="font-size:20px;">close</span>Stravování bez systému</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-error/70" style="font-size:20px;">close</span>Nekvalitní spánek</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-error/70" style="font-size:20px;">close</span>Dobré úmysly bez plánu</li>
+        </ul>
+      </div>
+      <div class="glass-card-strong rounded-2xl p-6 border-l-4 border-secondary">
+        <p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4">Po 26 týdnech</p>
+        <ul class="space-y-3 text-on-surface">
+          <li class="flex gap-3"><span class="material-symbols-outlined text-secondary" style="font-size:20px;">check</span>Stabilní energie přes den</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-secondary" style="font-size:20px;">check</span>Lepší soustředění a klid</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-secondary" style="font-size:20px;">check</span>Pohyb je součástí života</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-secondary" style="font-size:20px;">check</span>Pravidelný stravovací režim</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-secondary" style="font-size:20px;">check</span>Spánek, který regeneruje</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-secondary" style="font-size:20px;">check</span>Konkrétní rutina, ne dobré úmysly</li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-center text-xs text-on-surface-variant mt-6 max-w-2xl mx-auto">Individuální zkušenost se může lišit podle výchozího stavu, dodržování doporučení a dalších faktorů. Program nenahrazuje lékařskou péči.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-24 relative" id="program">
+  <div class="dna-glow opacity-30"></div>
+  <div class="relative max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12 fade-in">
+      <p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-3">Jak to funguje</p>
+      <h2 class="font-h2 text-h2 md:text-[44px] text-white">Tři fáze, krok za krokem</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="glass-card rounded-2xl p-6 fade-in relative">
+        <div class="absolute top-6 right-6 font-data-display text-[64px] leading-none text-primary/20">01</div>
+        <div class="relative">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Fáze 1 · Týdny 1–4</p>
+          <h3 class="font-h3 text-h3 text-white mb-3">Vstupní zhodnocení</h3>
+          <p class="text-on-surface-variant text-sm">Společně projdeme váš životní styl, návyky a cíle. Sestavíme plán, který sedí vašemu životu, ne univerzální šablonu.</p>
+        </div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 fade-in relative">
+        <div class="absolute top-6 right-6 font-data-display text-[64px] leading-none text-secondary/20">02</div>
+        <div class="relative">
+          <p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-2">Fáze 2 · Týdny 5–12</p>
+          <h3 class="font-h3 text-h3 text-white mb-3">Zavádění návyků</h3>
+          <p class="text-on-surface-variant text-sm">Postupně budujeme každý z pěti pilířů. Jeden po druhém, bez šoku, s pravidelnou zpětnou vazbou.</p>
+        </div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 fade-in relative">
+        <div class="absolute top-6 right-6 font-data-display text-[64px] leading-none text-primary/20">03</div>
+        <div class="relative">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Fáze 3 · Týdny 13–26</p>
+          <h3 class="font-h3 text-h3 text-white mb-3">Optimalizace</h3>
+          <p class="text-on-surface-variant text-sm">Ladíme, co funguje, a upravujeme, co se neujalo. Cílem je rutina, která vám zůstane i po skončení programu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-3xl mb-12 fade-in">
+      <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-3">Ohlasy</p>
+      <h2 class="font-h2 text-h2 md:text-[44px] text-white">Co říkají muži, kteří programem prošli</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="glass-card rounded-2xl p-6 fade-in">
+        <span class="material-symbols-outlined text-primary/40" style="font-size:36px;">format_quote</span>
+        <p class="text-on-surface mt-2">„Po půl roce mám víc energie a konečně se ráno cítím odpočatý. Není to o zázraku, je to o tom, že jsem konečně dělal věci pravidelně."</p>
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-on-primary font-bold">M</div>
+          <div>
+            <p class="font-semibold">Martin K.</p>
+            <p class="text-xs text-on-surface-variant">54 let, manažer</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 fade-in">
+        <span class="material-symbols-outlined text-primary/40" style="font-size:36px;">format_quote</span>
+        <p class="text-on-surface mt-2">„Změnil jsem hlavně režim jídla a spánku. Cítím se podstatně líp a večer mám ještě sílu na rodinu, ne jen na gauč."</p>
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-on-primary font-bold">P</div>
+          <div>
+            <p class="font-semibold">Petr S.</p>
+            <p class="text-xs text-on-surface-variant">48 let, podnikatel</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 fade-in">
+        <span class="material-symbols-outlined text-primary/40" style="font-size:36px;">format_quote</span>
+        <p class="text-on-surface mt-2">„Konečně mám systém, kterého se držím. Žádné extrémy, jen pravidelnost. To mi vyhovuje nejvíc."</p>
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-on-primary font-bold">J</div>
+          <div>
+            <p class="font-semibold">Jan V.</p>
+            <p class="text-xs text-on-surface-variant">57 let, IT specialista</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-xs text-on-surface-variant mt-8 max-w-2xl mx-auto">Reference vyjadřují individuální zkušenost konkrétních klientů. Výsledky se mohou u jednotlivých účastníků lišit. Program nenahrazuje lékařskou konzultaci ani léčbu.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24" id="faq">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="text-center mb-12 fade-in">
+      <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-3">Časté otázky</p>
+      <h2 class="font-h2 text-h2 md:text-[40px] text-white">Co se nejčastěji ptáte</h2>
+    </div>
+    <div class="space-y-3" data-faq>
+      <div class="glass-card rounded-xl overflow-hidden" data-faq-item>
+        <button class="w-full p-5 flex justify-between items-center text-left" data-faq-q>
+          <span class="font-semibold text-white">Je program vhodný pro začátečníka v 53 letech?</span>
+          <span class="material-symbols-outlined text-primary">expand_more</span>
+        </button>
+        <div class="px-5 pb-5 text-on-surface-variant text-sm overflow-hidden transition-all" data-faq-a style="max-height:0">Ano, věk 45–60 let je přesně cílová skupina, pro kterou je program nastaven. Začínáme tam, kde dnes jste.</div>
+      </div>
+      <div class="glass-card rounded-xl overflow-hidden" data-faq-item>
+        <button class="w-full p-5 flex justify-between items-center text-left" data-faq-q>
+          <span class="font-semibold text-white">Potřebuji speciální vybavení nebo drahé doplňky?</span>
+          <span class="material-symbols-outlined text-primary">expand_more</span>
+        </button>
+        <div class="px-5 pb-5 text-on-surface-variant text-sm overflow-hidden transition-all" data-faq-a style="max-height:0">Ne. Většinu změn uděláte v běžném životě. Doplňky stravy doporučujeme cíleně a jen tam, kde dávají smysl.</div>
+      </div>
+      <div class="glass-card rounded-xl overflow-hidden" data-faq-item>
+        <button class="w-full p-5 flex justify-between items-center text-left" data-faq-q>
+          <span class="font-semibold text-white">Kolik času mi to denně zabere?</span>
+          <span class="material-symbols-outlined text-primary">expand_more</span>
+        </button>
+        <div class="px-5 pb-5 text-on-surface-variant text-sm overflow-hidden transition-all" data-faq-a style="max-height:0">V první fázi 30–60 minut denně. Jakmile se návyky usadí, většina věcí se děje automaticky.</div>
+      </div>
+      <div class="glass-card rounded-xl overflow-hidden" data-faq-item>
+        <button class="w-full p-5 flex justify-between items-center text-left" data-faq-q>
+          <span class="font-semibold text-white">Co když mám zdravotní omezení nebo užívám léky?</span>
+          <span class="material-symbols-outlined text-primary">expand_more</span>
+        </button>
+        <div class="px-5 pb-5 text-on-surface-variant text-sm overflow-hidden transition-all" data-faq-a style="max-height:0">Program není lékařskou službou a nenahrazuje péči vašeho lékaře. Pokud máte chronické onemocnění nebo užíváte léky, vždy doporučujeme změny životního stylu probrat s vaším praktickým lékařem.</div>
+      </div>
+      <div class="glass-card rounded-xl overflow-hidden" data-faq-item>
+        <button class="w-full p-5 flex justify-between items-center text-left" data-faq-q>
+          <span class="font-semibold text-white">Jaké výsledky mohu reálně očekávat?</span>
+          <span class="material-symbols-outlined text-primary">expand_more</span>
+        </button>
+        <div class="px-5 pb-5 text-on-surface-variant text-sm overflow-hidden transition-all" data-faq-a style="max-height:0">Závisí na výchozím stavu, vaší disciplíně a okolnostech. Slibovat konkrétní čísla by bylo nepoctivé. Cílem je lepší energie, kvalitnější spánek a rutina, kterou si udržíte.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA / LEAD FORM -->
+<section class="py-24" id="assessment">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="glass-card-strong rounded-2xl p-8 md:p-10 fade-in relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none"></div>
+      <div class="relative">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 border border-secondary/30 mb-4">
+          <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Začněte tam, kde dnes jste</span>
+        </div>
+        <h2 class="font-h2 text-h2 md:text-[36px] text-white">Zjistěte, kde stojíte – <span class="text-primary">zdarma a za 15 minut</span></h2>
+        <p class="mt-3 text-body-md text-on-surface-variant">Vyplňte vstupní dotazník a ozveme se vám s osobním shrnutím a doporučenými dalšími kroky.</p>
+
+        <form class="mt-6 space-y-3" data-lead-form>
+          <input class="input-field" type="text" name="name" placeholder="Vaše jméno" required>
+          <input class="input-field" type="email" name="email" placeholder="Váš e-mail" required>
+          <label class="flex gap-3 items-start text-xs text-on-surface-variant cursor-pointer pt-2">
+            <input type="checkbox" name="gdpr" required class="mt-1 accent-primary flex-shrink-0">
+            <span>Souhlasím se zpracováním osobních údajů pro účely zaslání vstupního dotazníku a následné komunikace v souladu se <a href="/legal/privacy.html" class="text-primary underline">zásadami ochrany osobních údajů</a>. Souhlas mohu kdykoli odvolat.</span>
+          </label>
+          <label class="flex gap-3 items-start text-xs text-on-surface-variant cursor-pointer">
+            <input type="checkbox" name="marketing" class="mt-1 accent-secondary flex-shrink-0">
+            <span>Chci dostávat newsletter s tipy a obsahem (nepovinné, lze kdykoli odhlásit).</span>
+          </label>
+          <button type="submit" class="btn-primary w-full mt-4">
+            <span class="material-symbols-outlined" style="font-size:20px;">arrow_forward</span>
+            Získat dotazník zdarma
+          </button>
+          <p data-form-status></p>
+          <p class="text-center text-xs text-on-surface-variant pt-2">🔒 Vaše údaje neprodáváme. Newsletter můžete kdykoli odhlásit.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 bg-surface-container-lowest py-12 mt-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-primary" style="font-size:22px;font-variation-settings:'FILL' 1;">genetics</span>
+          </div>
+          <span class="font-data-display text-lg tracking-wider text-white">ANTI AGE <span class="text-primary">HACK</span></span>
+        </div>
+        <p class="text-sm text-on-surface-variant max-w-md">Strukturovaný program životního stylu pro muže 45–60 let. Pět pilířů, biometrický tracker, cílená suplementace.</p>
+      </div>
+      <div>
+        <p class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-3">Program</p>
+        <ul class="space-y-2 text-sm text-on-surface-variant">
+          <li><a href="#hacks" class="hover:text-primary">5 pilířů</a></li>
+          <li><a href="#program" class="hover:text-primary">Jak to funguje</a></li>
+          <li><a href="#faq" class="hover:text-primary">FAQ</a></li>
+          <li><a href="/login.html" class="hover:text-primary">Přihlášení</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-3">Právní</p>
+        <ul class="space-y-2 text-sm text-on-surface-variant">
+          <li><a href="/legal/privacy.html" class="hover:text-primary">Ochrana osobních údajů</a></li>
+          <li><a href="/legal/terms.html" class="hover:text-primary">Obchodní podmínky</a></li>
+          <li><a href="/legal/contact.html" class="hover:text-primary">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="helix-divider opacity-30 mb-6"></div>
+
+    <div class="text-xs text-on-surface-variant space-y-3">
+      <p><strong class="text-on-surface">Důležité upozornění:</strong> Program ANTI AGE HACK není zdravotní službou ve smyslu zákona č. 372/2011 Sb. a nenahrazuje konzultaci, diagnostiku ani léčbu poskytovanou lékařem či jiným zdravotnickým pracovníkem. Veškeré informace mají edukační a motivační charakter. Doplňky stravy nenahrazují pestrou a vyváženou stravu ani zdravý životní styl. Při zdravotních potížích, chronických onemocněních nebo užívání léků vždy konzultujte změny životního stylu se svým lékařem. Nikdy nepřekračujte doporučené dávkování doplňků stravy. Uchovávejte mimo dosah dětí.</p>
+      <p>© 2026 ANTI AGE HACK. Provozovatel: <span class="text-on-surface">[doplnit jméno / IČO / sídlo]</span>. Všechna práva vyhrazena.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/app.js"></script>
 </body>
 </html>

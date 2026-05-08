@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrace – ANTI AGE HACK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <script src="/assets/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body class="helix-bg min-h-screen flex flex-col">
+  <header class="px-4 py-4">
+    <a href="/" class="inline-flex items-center gap-2">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-primary" style="font-size:22px;font-variation-settings:'FILL' 1;">genetics</span>
+      </div>
+      <span class="font-data-display text-lg tracking-wider text-white">ANTI AGE <span class="text-primary">HACK</span></span>
+    </a>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center px-4 py-8 relative">
+    <div class="dna-glow"></div>
+    <div class="relative w-full max-w-md">
+      <div class="glass-card-strong rounded-2xl p-8">
+        <p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-2">Bezplatný účet</p>
+        <h1 class="font-h2 text-h2 text-white mb-2">Vytvořte si účet</h1>
+        <p class="text-sm text-on-surface-variant mb-6">Začněte se vstupním dotazníkem a získejte personalizovaná doporučení.</p>
+
+        <form id="registerForm" class="space-y-3">
+          <input class="input-field" type="text" name="first_name" placeholder="Jméno" required autocomplete="given-name">
+          <input class="input-field" type="email" name="email" placeholder="E-mail" required autocomplete="email">
+          <input class="input-field" type="password" name="password" placeholder="Heslo (min. 8 znaků)" minlength="8" required autocomplete="new-password">
+
+          <label class="flex gap-3 items-start text-xs text-on-surface-variant cursor-pointer pt-2">
+            <input type="checkbox" name="gdpr" required class="mt-1 accent-primary flex-shrink-0">
+            <span>Souhlasím se zpracováním osobních údajů dle <a href="/legal/privacy.html" class="text-primary underline">zásad ochrany osobních údajů</a> a souhlasím s <a href="/legal/terms.html" class="text-primary underline">obchodními podmínkami</a>.</span>
+          </label>
+          <label class="flex gap-3 items-start text-xs text-on-surface-variant cursor-pointer">
+            <input type="checkbox" name="marketing" class="mt-1 accent-secondary flex-shrink-0">
+            <span>Chci dostávat newsletter s tipy (nepovinné, kdykoli odhlasitelné).</span>
+          </label>
+
+          <button type="submit" class="btn-primary w-full mt-4">
+            <span class="material-symbols-outlined" style="font-size:20px;">person_add</span>
+            Vytvořit účet
+          </button>
+          <p id="registerStatus" class="text-sm text-error mt-2 hidden"></p>
+        </form>
+      </div>
+
+      <p class="text-center text-xs text-on-surface-variant mt-6">
+        Už máte účet? <a href="/login.html" class="text-primary hover:underline">Přihlásit se</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="py-6 text-center text-xs text-on-surface-variant">
+    © 2026 ANTI AGE HACK · <a href="/legal/privacy.html" class="hover:text-primary">Ochrana OÚ</a> · <a href="/legal/terms.html" class="hover:text-primary">VOP</a>
+  </footer>
+
+  <script src="/assets/app.js"></script>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target));
+      const status = document.getElementById('registerStatus');
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = 'Vytvářím účet…';
+      try {
+        // TODO: real API – AAH.api('/auth/register', {...})
+        AAH.storage.set('auth_token', 'demo-token-' + Date.now());
+        AAH.storage.set('customer', { email: data.email, first_name: data.first_name });
+        window.location.href = '/onboarding.html';
+      } catch (err) {
+        status.textContent = 'Registrace se nezdařila. Zkuste to prosím znovu.';
+        status.classList.remove('hidden');
+        btn.disabled = false; btn.textContent = 'Vytvořit účet';
+      }
+    });
+  </script>
+</body>
+</html>

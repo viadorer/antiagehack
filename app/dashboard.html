@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dashboard – ANTI AGE HACK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <script src="/assets/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body class="helix-bg pb-32">
+
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-surface/70 backdrop-blur-xl border-b border-white/5">
+  <div class="flex justify-between items-center w-full px-4 py-4 max-w-7xl mx-auto">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-on-primary font-bold" id="userAvatar">M</div>
+      <div>
+        <h1 class="font-h3 text-h3 leading-tight text-white">Ahoj, <span id="userName">Martine</span></h1>
+        <p class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Member · 26týdenní program</p>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-variant/40 hover:bg-surface-variant transition active:scale-95">
+        <span class="material-symbols-outlined text-primary">notifications</span>
+      </button>
+      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-variant/40 hover:bg-surface-variant transition active:scale-95" onclick="AAH.auth.logout()" title="Odhlásit">
+        <span class="material-symbols-outlined text-on-surface-variant">logout</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="px-4 py-6 space-y-6 max-w-7xl mx-auto">
+
+  <!-- HERO: Vitality Score (replaces "Biological Age" - compliant) -->
+  <section class="glass-card-strong rounded-2xl p-6 relative overflow-hidden">
+    <div class="absolute -right-12 -top-12 opacity-10">
+      <span class="material-symbols-outlined text-primary" style="font-size:160px;font-variation-settings:'FILL' 1;">genetics</span>
+    </div>
+    <div class="relative z-10 space-y-4">
+      <div class="flex justify-between items-start flex-wrap gap-3">
+        <div class="space-y-1">
+          <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Vitality Score</p>
+          <h2 class="font-h1 text-[64px] leading-none text-white">85<span class="text-h3 font-normal text-on-surface-variant">/100</span></h2>
+        </div>
+        <span class="pill pill-secondary"><span class="material-symbols-outlined" style="font-size:14px;">trending_up</span> +12 % za 30 dnů</span>
+      </div>
+      <div class="w-full bg-surface-container-highest rounded-full h-1.5">
+        <div class="bg-gradient-to-r from-primary to-secondary h-full rounded-full" style="width:85%"></div>
+      </div>
+      <p class="font-body-md text-on-surface-variant text-sm">Skóre je kompozitní hodnota z vašich vstupů (spánek, pohyb, stravování, regenerace, suplementace). Není zdravotním ukazatelem ani diagnostickým nástrojem.</p>
+    </div>
+  </section>
+
+  <!-- Today's Protocol -->
+  <section class="space-y-3">
+    <h3 class="font-h3 text-h3 text-white px-1">Dnešní rutina</h3>
+    <div class="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary">event_note</span>
+      </div>
+      <div class="flex-1">
+        <p class="font-h3 text-lg leading-none text-white">Silový trénink 45 min + sauna</p>
+        <p class="text-sm text-on-surface-variant mt-1">Doporučený čas: 17:30 – 18:30</p>
+      </div>
+      <a href="/app/protocol.html" class="bg-primary text-on-primary h-10 w-10 rounded-full flex items-center justify-center active:scale-95 transition flex-shrink-0">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">play_arrow</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 5 Pillars Bento -->
+  <section class="space-y-4">
+    <div class="flex justify-between items-end px-1">
+      <h3 class="font-h3 text-h3 text-white">Dnešní pokrok – 5 pilířů</h3>
+      <a href="/app/protocol.html" class="text-primary font-label-caps text-label-caps">ZOBRAZIT VŠE</a>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+      <!-- Pohyb -->
+      <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-between aspect-square">
+        <div class="relative w-16 h-16 flex items-center justify-center">
+          <svg class="w-full h-full progress-ring" viewBox="0 0 100 100">
+            <circle class="stroke-surface-variant" cx="50" cy="50" fill="transparent" r="40" stroke-width="4"></circle>
+            <circle class="stroke-primary" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="50.2" stroke-linecap="round" stroke-width="4"></circle>
+          </svg>
+          <span class="absolute material-symbols-outlined text-primary">directions_run</span>
+        </div>
+        <p class="font-label-caps text-label-caps text-center mt-2 text-on-surface">Pohyb</p>
+        <p class="text-xs text-on-surface-variant">80 %</p>
+      </div>
+      <!-- Strava -->
+      <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-between aspect-square">
+        <div class="relative w-16 h-16 flex items-center justify-center">
+          <svg class="w-full h-full progress-ring" viewBox="0 0 100 100">
+            <circle class="stroke-surface-variant" cx="50" cy="50" fill="transparent" r="40" stroke-width="4"></circle>
+            <circle class="stroke-secondary" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="180" stroke-linecap="round" stroke-width="4"></circle>
+          </svg>
+          <span class="absolute material-symbols-outlined text-secondary">restaurant</span>
+        </div>
+        <p class="font-label-caps text-label-caps text-center mt-2 text-on-surface">Strava</p>
+        <p class="text-xs text-on-surface-variant">35 %</p>
+      </div>
+      <!-- Spánek -->
+      <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-between aspect-square">
+        <div class="relative w-16 h-16 flex items-center justify-center">
+          <svg class="w-full h-full progress-ring" viewBox="0 0 100 100">
+            <circle class="stroke-surface-variant" cx="50" cy="50" fill="transparent" r="40" stroke-width="4"></circle>
+            <circle class="stroke-tertiary-fixed-dim" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="10" stroke-linecap="round" stroke-width="4"></circle>
+          </svg>
+          <span class="absolute material-symbols-outlined text-tertiary-fixed-dim">bedtime</span>
+        </div>
+        <p class="font-label-caps text-label-caps text-center mt-2 text-on-surface">Spánek</p>
+        <p class="text-xs text-on-surface-variant">95 %</p>
+      </div>
+      <!-- Regenerace -->
+      <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-between aspect-square">
+        <div class="relative w-16 h-16 flex items-center justify-center">
+          <svg class="w-full h-full progress-ring" viewBox="0 0 100 100">
+            <circle class="stroke-surface-variant" cx="50" cy="50" fill="transparent" r="40" stroke-width="4"></circle>
+            <circle class="stroke-primary" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="125.6" stroke-linecap="round" stroke-width="4"></circle>
+          </svg>
+          <span class="absolute material-symbols-outlined text-primary">thermostat</span>
+        </div>
+        <p class="font-label-caps text-label-caps text-center mt-2 text-on-surface">Regenerace</p>
+        <p class="text-xs text-on-surface-variant">50 %</p>
+      </div>
+      <!-- Doplňky -->
+      <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-between aspect-square">
+        <div class="relative w-16 h-16 flex items-center justify-center">
+          <svg class="w-full h-full progress-ring" viewBox="0 0 100 100">
+            <circle class="stroke-surface-variant" cx="50" cy="50" fill="transparent" r="40" stroke-width="4"></circle>
+            <circle class="stroke-secondary" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="200" stroke-linecap="round" stroke-width="4"></circle>
+          </svg>
+          <span class="absolute material-symbols-outlined text-secondary">pill</span>
+        </div>
+        <p class="font-label-caps text-label-caps text-center mt-2 text-on-surface">Doplňky</p>
+        <p class="text-xs text-on-surface-variant">20 %</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Metrics -->
+  <section class="space-y-4">
+    <h3 class="font-h3 text-h3 text-white px-1">Klíčové metriky</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a href="/app/biometrics.html" class="glass-card rounded-xl p-5 flex justify-between items-center hover:border-primary/30 transition">
+        <div>
+          <p class="text-on-surface-variant font-label-caps text-label-caps">Klidové HRV</p>
+          <p class="font-data-display text-data-display text-primary">72 ms</p>
+        </div>
+        <span class="pill pill-primary">Optimální</span>
+      </a>
+      <a href="/app/biometrics.html" class="glass-card rounded-xl p-5 flex justify-between items-center hover:border-primary/30 transition">
+        <div>
+          <p class="text-on-surface-variant font-label-caps text-label-caps">Glukóza nalačno</p>
+          <p class="font-data-display text-data-display text-secondary">4,8 mmol/L</p>
+        </div>
+        <span class="pill pill-secondary">Stabilní</span>
+      </a>
+      <a href="/app/biometrics.html" class="glass-card rounded-xl p-5 flex justify-between items-center hover:border-primary/30 transition">
+        <div>
+          <p class="text-on-surface-variant font-label-caps text-label-caps">Spánek průměr</p>
+          <p class="font-data-display text-data-display text-primary">7h 42m</p>
+        </div>
+        <span class="pill pill-primary">+18 min</span>
+      </a>
+      <a href="/app/biometrics.html" class="glass-card rounded-xl p-5 flex justify-between items-center hover:border-primary/30 transition">
+        <div>
+          <p class="text-on-surface-variant font-label-caps text-label-caps">VO2 max</p>
+          <p class="font-data-display text-data-display text-secondary">42,1</p>
+        </div>
+        <span class="pill pill-secondary">+3 % / měsíc</span>
+      </a>
+    </div>
+    <p class="text-xs text-on-surface-variant px-1">Hodnoty pochází z vašich vstupů nebo synchronizace s Apple Health / Garmin. Nejsou diagnostickým nástrojem.</p>
+  </section>
+
+  <!-- Helix Divider -->
+  <div class="helix-divider opacity-30 my-8"></div>
+
+  <!-- Compliance disclaimer -->
+  <div class="disclaimer-box">
+    <strong class="text-on-surface">Upozornění:</strong> Aplikace je tracker životního stylu. Nenahrazuje lékařskou péči, diagnostiku ani léčbu. Při jakýchkoli zdravotních potížích konzultujte svého lékaře. Doplňky stravy nenahrazují pestrou stravu.
+  </div>
+</main>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-lg border-t border-white/10 flex justify-around items-center px-4 py-3">
+  <a href="/app/dashboard.html" class="flex flex-col items-center bg-primary-container/20 text-primary rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">home</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Home</span>
+  </a>
+  <a href="/app/biometrics.html" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">monitoring</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Metriky</span>
+  </a>
+  <a href="/app/protocol.html" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">event_note</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Protokol</span>
+  </a>
+  <a href="#" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">storefront</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Shop</span>
+  </a>
+  <a href="#" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">person</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Profil</span>
+  </a>
+</nav>
+
+<script src="/assets/app.js"></script>
+<script>
+  // Personalize header
+  const customer = AAH.storage.get('customer');
+  if (customer) {
+    const name = customer.first_name || customer.email?.split('@')[0] || 'Členové';
+    document.getElementById('userName').textContent = name;
+    document.getElementById('userAvatar').textContent = name[0].toUpperCase();
+  }
+  // Auth gate (commented for demo - uncomment for production)
+  // AAH.auth.requireLogin();
+</script>
+</body>
+</html>

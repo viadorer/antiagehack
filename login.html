@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Přihlášení – ANTI AGE HACK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <script src="/assets/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body class="helix-bg min-h-screen flex flex-col">
+  <header class="px-4 py-4">
+    <a href="/" class="inline-flex items-center gap-2">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-primary" style="font-size:22px;font-variation-settings:'FILL' 1;">genetics</span>
+      </div>
+      <span class="font-data-display text-lg tracking-wider text-white">ANTI AGE <span class="text-primary">HACK</span></span>
+    </a>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center px-4 py-12 relative">
+    <div class="dna-glow"></div>
+    <div class="relative w-full max-w-md">
+      <div class="glass-card-strong rounded-2xl p-8">
+        <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Member Area</p>
+        <h1 class="font-h2 text-h2 text-white mb-2">Přihlášení</h1>
+        <p class="text-sm text-on-surface-variant mb-6">Přihlaste se do svého trackeru a pokračujte v programu.</p>
+
+        <form id="loginForm" class="space-y-3">
+          <input class="input-field" type="email" name="email" placeholder="E-mail" required autocomplete="email">
+          <input class="input-field" type="password" name="password" placeholder="Heslo" required autocomplete="current-password">
+          <div class="flex justify-between items-center text-xs">
+            <label class="flex items-center gap-2 text-on-surface-variant cursor-pointer">
+              <input type="checkbox" name="remember" class="accent-primary">
+              <span>Zůstat přihlášen</span>
+            </label>
+            <a href="#" class="text-primary hover:underline">Zapomenuté heslo?</a>
+          </div>
+          <button type="submit" class="btn-primary w-full mt-2">
+            <span class="material-symbols-outlined" style="font-size:20px;">login</span>
+            Přihlásit se
+          </button>
+          <p id="loginStatus" class="text-sm text-error mt-2 hidden"></p>
+        </form>
+
+        <div class="my-6 flex items-center gap-3">
+          <div class="flex-1 helix-divider opacity-30"></div>
+          <span class="text-xs text-on-surface-variant font-label-caps uppercase tracking-widest">nebo</span>
+          <div class="flex-1 helix-divider opacity-30"></div>
+        </div>
+
+        <a href="/register.html" class="btn-ghost w-full">Vytvořit nový účet</a>
+      </div>
+
+      <p class="text-center text-xs text-on-surface-variant mt-6">
+        Nepamatujete si heslo? <a href="#" class="text-primary hover:underline">Pošleme vám magic link</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="py-6 text-center text-xs text-on-surface-variant">
+    © 2026 ANTI AGE HACK · <a href="/legal/privacy.html" class="hover:text-primary">Ochrana OÚ</a> · <a href="/legal/terms.html" class="hover:text-primary">VOP</a>
+  </footer>
+
+  <script src="/assets/app.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target));
+      const status = document.getElementById('loginStatus');
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = 'Přihlašuji…';
+      try {
+        // TODO: real API call to Eshopsys /auth/login
+        // const res = await AAH.api('/auth/login', { method: 'POST', body: JSON.stringify(data) });
+        // AAH.storage.set('auth_token', res.access_token);
+        // AAH.storage.set('customer', res.customer);
+
+        // Demo mode: accept anything, fake session
+        AAH.storage.set('auth_token', 'demo-token-' + Date.now());
+        AAH.storage.set('customer', { email: data.email, first_name: data.email.split('@')[0] });
+        window.location.href = '/app/dashboard.html';
+      } catch (err) {
+        status.textContent = 'Přihlášení se nezdařilo. Zkontrolujte údaje.';
+        status.classList.remove('hidden');
+        btn.disabled = false; btn.textContent = 'Přihlásit se';
+      }
+    });
+  </script>
+</body>
+</html>

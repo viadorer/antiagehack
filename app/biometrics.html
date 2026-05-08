@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metriky – ANTI AGE HACK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <script src="/assets/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body class="helix-bg pb-32">
+
+<header class="bg-surface/70 sticky top-0 z-50 backdrop-blur-xl border-b border-white/5">
+  <div class="flex justify-between items-center w-full px-4 py-4 max-w-7xl mx-auto">
+    <div class="flex items-center gap-3">
+      <a href="/app/dashboard.html" class="text-primary active:scale-95 transition">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
+      <h1 class="font-h3 text-h3 text-white">Vaše metriky</h1>
+    </div>
+    <button class="text-on-surface-variant"><span class="material-symbols-outlined">tune</span></button>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 mt-4 space-y-6">
+
+  <!-- Sync status -->
+  <section>
+    <div class="glass-card rounded-xl p-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">sync</span>
+          <div class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-secondary rounded-full border-2 border-surface"></div>
+        </div>
+        <div>
+          <p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Synchronizace zařízení</p>
+          <p class="font-body-md text-on-surface text-sm">Apple Health · Garmin Connect</p>
+        </div>
+      </div>
+      <span class="pill pill-secondary">Aktivní</span>
+    </div>
+  </section>
+
+  <!-- Hero insight - REFRAMED from "mitochondrial efficiency" to compliant copy -->
+  <section>
+    <div class="relative overflow-hidden glass-card-strong rounded-2xl p-6 border border-primary/20">
+      <div class="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none">
+        <span class="material-symbols-outlined text-primary" style="font-size:120px;">science</span>
+      </div>
+      <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Trend Vitality Score</p>
+      <h2 class="font-h2 text-h2 text-white leading-tight">Vaše skóre roste o 12 % za poslední měsíc</h2>
+      <div class="mt-4 flex items-center gap-2 text-secondary">
+        <span class="material-symbols-outlined">trending_up</span>
+        <span class="font-label-caps text-label-caps">VŠECH PĚT PILÍŘŮ V POHYBU</span>
+      </div>
+      <p class="text-xs text-on-surface-variant mt-4">Skóre je agregát z vašich vstupů a synchronizovaných dat. Není zdravotním ukazatelem.</p>
+    </div>
+  </section>
+
+  <!-- Biometrics Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <!-- VO2 Max -->
+    <div class="glass-card rounded-xl p-5 flex flex-col gap-4">
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="font-label-caps text-label-caps text-on-surface-variant">VO2 MAX</p>
+          <p class="font-data-display text-data-display text-primary">42,1</p>
+        </div>
+        <span class="pill pill-secondary">Nadprůměr</span>
+      </div>
+      <div class="h-32 w-full flex items-end gap-[2px]">
+        <div class="bg-primary/20 w-full rounded-t" style="height:40%"></div>
+        <div class="bg-primary/20 w-full rounded-t" style="height:45%"></div>
+        <div class="bg-primary/20 w-full rounded-t" style="height:50%"></div>
+        <div class="bg-primary/40 w-full rounded-t" style="height:48%"></div>
+        <div class="bg-primary/60 w-full rounded-t" style="height:60%"></div>
+        <div class="bg-primary/80 w-full rounded-t" style="height:75%"></div>
+        <div class="bg-primary w-full rounded-t" style="height:90%"></div>
+      </div>
+      <p class="text-on-surface-variant text-sm">Vaše aerobní kondice je <span class="text-primary font-bold">nadprůměrná pro věk 50+</span>.</p>
+    </div>
+
+    <!-- HRV -->
+    <div class="glass-card rounded-xl p-5 flex flex-col gap-4">
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="font-label-caps text-label-caps text-on-surface-variant">HRV (spánek)</p>
+          <p class="font-data-display text-data-display text-secondary">78 ms</p>
+        </div>
+        <span class="pill pill-secondary">Regenerace</span>
+      </div>
+      <div class="h-32 relative">
+        <svg class="w-full h-full" viewBox="0 0 200 100">
+          <path class="text-secondary opacity-80" d="M0,80 Q25,75 50,60 T100,40 T150,55 T200,30" fill="none" stroke="currentColor" stroke-width="2"></path>
+          <circle class="fill-secondary" cx="200" cy="30" r="4"></circle>
+        </svg>
+      </div>
+      <p class="text-on-surface-variant text-sm">Hodnota signalizuje <span class="text-secondary font-bold">dobrou nervovou regeneraci</span>.</p>
+    </div>
+
+    <!-- Glukóza -->
+    <div class="glass-card rounded-xl p-5 flex flex-col gap-4">
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="font-label-caps text-label-caps text-on-surface-variant">Glukóza nalačno</p>
+          <p class="font-data-display text-data-display text-primary">4,8 mmol/L</p>
+        </div>
+        <span class="pill pill-secondary">Stabilní</span>
+      </div>
+      <div class="h-32 w-full flex items-center justify-center">
+        <div class="relative w-24 h-24">
+          <svg class="w-full h-full rotate-[-90deg]" viewBox="0 0 36 36">
+            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(138, 235, 255, 0.1)" stroke-width="1.5"></path>
+            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#8aebff" stroke-dasharray="85,100" stroke-width="1.5"></path>
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="text-[10px] font-label-caps text-on-surface-variant">VARIABILITA</span>
+            <span class="text-lg font-bold text-primary">8,4 %</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-on-surface-variant text-sm">Vaše glykemická křivka je <span class="text-primary font-bold">stabilní</span>.</p>
+    </div>
+
+    <!-- Spánek -->
+    <div class="glass-card rounded-xl p-5 flex flex-col gap-4">
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="font-label-caps text-label-caps text-on-surface-variant">Spánek (7d)</p>
+          <p class="font-data-display text-data-display text-secondary">7h 42m</p>
+        </div>
+        <span class="pill pill-secondary">+18 min</span>
+      </div>
+      <div class="grid grid-cols-7 gap-1 h-20">
+        <div class="bg-primary/30 rounded-t" style="height:60%"></div>
+        <div class="bg-primary/40 rounded-t" style="height:70%"></div>
+        <div class="bg-primary/50 rounded-t" style="height:75%"></div>
+        <div class="bg-primary/40 rounded-t" style="height:65%"></div>
+        <div class="bg-primary/60 rounded-t" style="height:80%"></div>
+        <div class="bg-primary/70 rounded-t" style="height:90%"></div>
+        <div class="bg-primary rounded-t" style="height:95%"></div>
+      </div>
+      <p class="text-on-surface-variant text-sm">Trend je <span class="text-secondary font-bold">stabilně pozitivní</span>.</p>
+    </div>
+
+    <!-- Klidový tep -->
+    <div class="glass-card rounded-xl p-5 flex flex-col gap-4">
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="font-label-caps text-label-caps text-on-surface-variant">Klidový tep</p>
+          <p class="font-data-display text-data-display text-primary">58 BPM</p>
+        </div>
+        <span class="pill pill-primary">Klidný</span>
+      </div>
+      <div class="h-32 relative flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary opacity-30" style="font-size:96px;font-variation-settings:'FILL' 1;">favorite</span>
+      </div>
+      <p class="text-on-surface-variant text-sm">Hodnota je <span class="text-primary font-bold">v dobrém rozmezí</span> pro váš věk.</p>
+    </div>
+
+    <!-- Kroky -->
+    <div class="glass-card rounded-xl p-5 flex flex-col gap-4">
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="font-label-caps text-label-caps text-on-surface-variant">Kroky dnes</p>
+          <p class="font-data-display text-data-display text-secondary">8 240</p>
+        </div>
+        <span class="pill pill-secondary">82 %</span>
+      </div>
+      <div class="h-32 w-full flex items-center justify-center">
+        <div class="relative w-24 h-24">
+          <svg class="w-full h-full rotate-[-90deg]" viewBox="0 0 36 36">
+            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(77, 224, 130, 0.1)" stroke-width="2"></path>
+            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#4de082" stroke-dasharray="82,100" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="text-[10px] font-label-caps text-on-surface-variant">CÍL</span>
+            <span class="text-lg font-bold text-secondary">10 000</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-on-surface-variant text-sm">Zbývá <span class="text-secondary font-bold">1 760 kroků</span> do denního cíle.</p>
+    </div>
+  </div>
+
+  <div class="helix-divider opacity-30 my-8"></div>
+
+  <!-- Insights -->
+  <section>
+    <h3 class="font-h3 text-h3 text-white mb-4">Doporučení na základě dat</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card rounded-xl p-5">
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-primary">tune</span>
+          </div>
+          <div>
+            <p class="font-label-caps text-label-caps text-secondary mb-1">Úprava plánu</p>
+            <h4 class="font-body-lg text-white font-semibold mb-1">Zvýšit aerobní pohyb</h4>
+            <p class="text-on-surface-variant text-sm">Na základě vašeho VO2 max trendu doporučujeme přidat 1 sezení Zóna 2 (60 min) týdně.</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card rounded-xl p-5">
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-lg bg-secondary/15 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-secondary">restaurant</span>
+          </div>
+          <div>
+            <p class="font-label-caps text-label-caps text-secondary mb-1">Stravování</p>
+            <h4 class="font-body-lg text-white font-semibold mb-1">Pravidelnost večeří</h4>
+            <p class="text-on-surface-variant text-sm">Zkuste posunout poslední jídlo dne min. 2,5 h před spaním. Glukózová stabilita reaguje pozitivně.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer-box mt-8">
+    <strong class="text-on-surface">Důležité:</strong> Zobrazená data jsou agregát z vašich vstupů a synchronizovaných zařízení. Nejedná se o lékařské vyšetření, diagnózu ani léčbu. Při neobvyklých hodnotách kontaktujte svého lékaře.
+  </div>
+</main>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-lg border-t border-white/10 flex justify-around items-center px-4 py-3">
+  <a href="/app/dashboard.html" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">home</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Home</span>
+  </a>
+  <a href="/app/biometrics.html" class="flex flex-col items-center bg-primary-container/20 text-primary rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">monitoring</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Metriky</span>
+  </a>
+  <a href="/app/protocol.html" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">event_note</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Protokol</span>
+  </a>
+  <a href="#" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">storefront</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Shop</span>
+  </a>
+  <a href="#" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">person</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Profil</span>
+  </a>
+</nav>
+
+<script src="/assets/app.js"></script>
+</body>
+</html>
