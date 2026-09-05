@@ -167,6 +167,16 @@
             <div id="resultPriorities" class="space-y-2"></div>
           </div>
 
+          <!-- Personalized product recommendations from HerbPharm -->
+          <div class="mb-6">
+            <div class="flex items-center justify-between mb-3">
+              <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Doporučené doplňky pro vás</p>
+              <a href="/app/shop.html" class="text-xs text-on-surface-variant hover:text-primary">Zobrazit vše →</a>
+            </div>
+            <div id="resultProducts" class="grid grid-cols-1 sm:grid-cols-3 gap-3"></div>
+            <p class="text-[11px] text-on-surface-variant mt-2">Prodej zajišťuje partner HerbPharm.cz. Doplňky stravy nenahrazují pestrou stravu.</p>
+          </div>
+
           <!-- Email capture for full plan -->
           <div class="glass-card rounded-2xl p-6 border-l-4 border-secondary">
             <h3 class="font-h3 text-h3 text-white mb-2">Získejte kompletní plán zdarma</h3>
@@ -264,6 +274,61 @@
       return items.slice(0, 3);
     }
 
+    // Personalizovaná doporučení konkrétních produktů podle quiz odpovědí
+    // Mapa produktů z HerbPharm katalogu s EU-compliant claims
+    const PRODUCTS = {
+      omega3: {
+        slug: 'balanceoil-plus-orange-lemon-mint', name: 'BalanceOil+ Orange Lemon Mint',
+        price: 979, unit: '300 ml', icon: 'water_drop', color: 'primary',
+        why: 'EPA a DHA přispívají k normální činnosti srdce (250 mg/d).',
+      },
+      d3: {
+        slug: 'zinoshine-plus', name: 'ZinoShine+ (Vitamin D3)',
+        price: 259, unit: '30 ks', icon: 'sunny', color: 'primary',
+        why: 'Vitamin D přispívá k normální funkci svalů a imunitního systému.',
+      },
+      fiber: {
+        slug: 'zinobiotic-plus', name: 'ZinoBiotic+ (vláknina)',
+        price: 689, unit: '180 g', icon: 'grass', color: 'secondary',
+        why: 'Vláknina přispívá k normální funkci střev.',
+      },
+      multi: {
+        slug: 'xtend-plus', name: 'Xtend+ (multivitamín)',
+        price: 969, unit: '60 ks', icon: 'medication', color: 'primary',
+        why: 'B-komplex přispívá ke snížení míry únavy a vyčerpání.',
+      },
+      test: {
+        slug: 'balancetest-omega-6-3', name: 'BalanceTest (poměr Omega-6:3)',
+        price: 1479, unit: '1 test', icon: 'biotech', color: 'secondary',
+        why: 'Zjistěte svoji aktuální nutriční hodnotu Omega-3.',
+      },
+      bundle: {
+        slug: 'balanceoil-plus-vita-immunity', name: 'BalanceOil+ & Vita Immunity',
+        price: 1079, unit: 'sada', icon: 'inventory_2', color: 'primary',
+        why: 'Startovní kombinace pro první měsíc programu.',
+      },
+    };
+
+    function productsFor(data) {
+      const picks = new Set();
+      // Vždycky doporučit Omega-3 (nedostatek u >70 % CZ populace)
+      picks.add('omega3');
+      // Nízká energie / únava → multi (B-komplex) a D3
+      if (['low','very-low'].includes(data.energy)) { picks.add('multi'); picks.add('d3'); }
+      // Slabý pohyb → D3 (svalová funkce) + multi
+      if (['1-2','rare','none'].includes(data.movement)) { picks.add('d3'); picks.add('multi'); }
+      // Špatný spánek → multi (hořčík v Xtend+)
+      if (['poor','very-poor'].includes(data.sleep)) picks.add('multi');
+      // Cíl "prevence" nebo výborný stav → BalanceTest pro měření vstupu
+      if (data.goal === 'prevention' || data.energy === 'excellent') picks.add('test');
+      // Cíl "energie" → bundle (rychlý start)
+      if (data.goal === 'energy') picks.add('bundle');
+      // Fallback: pokud jen omega3 → přidat D3 + fiber
+      if (picks.size < 2) { picks.add('d3'); picks.add('fiber'); }
+      // Max 3 produkty
+      return Array.from(picks).slice(0, 3).map(k => PRODUCTS[k]);
+    }
+
     function renderResult(data) {
       const score = computeScore(data);
       const cat = categoryFor(score);
@@ -286,6 +351,26 @@
             <p class="text-xs text-on-surface-variant">${p.desc}</p>
           </div>
         </div>`).join('');
+
+      // personalized product recommendations from HerbPharm
+      const products = productsFor(data);
+      const productContainer = document.getElementById('resultProducts');
+      if (productContainer) {
+        productContainer.innerHTML = products.map(p => `
+          <a href="https://herbpharm.cz/produkty/${p.slug}?utm_source=antiagehack&utm_medium=web&utm_campaign=onboarding-result" target="_blank" rel="noopener sponsored" class="glass-card rounded-xl p-4 hover:border-primary/30 transition group flex flex-col">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-lg bg-${p.color}/15 flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-${p.color}">${p.icon}</span>
+              </div>
+              <p class="text-white font-semibold text-sm leading-tight">${p.name}</p>
+            </div>
+            <p class="text-[11px] text-on-surface-variant mb-3 leading-snug">${p.why}</p>
+            <div class="mt-auto flex items-baseline justify-between">
+              <span class="font-data-display text-lg text-white">${p.price}&nbsp;Kč</span>
+              <span class="text-[11px] text-primary group-hover:underline">Koupit →</span>
+            </div>
+          </a>`).join('');
+      }
     }
 
     // Selection visual feedback
