@@ -1,0 +1,515 @@
+[
+  {
+    "slug": "balanceoil-plus-citron",
+    "name": "BalanceOil+ Citron",
+    "tagline": "Rybí olej s omega-3 a olivovými polyfenoly, citronová příchuť.",
+    "description": [
+      "Kombinace rybího oleje a olivového oleje z nezralých oliv. Denní dávka se odvozuje od tělesné hmotnosti — 0,15 ml na kilogram, takže při 70 kg to vychází zhruba na 10,5 ml denně.",
+      "EPA a DHA přispívají k normální činnosti srdce. Příznivého účinku se dosáhne při denním příjmu 250 mg EPA a DHA."
+    ],
+    "category": "omega3",
+    "price": 979,
+    "listPrice": 1450,
+    "unit": "300 ml",
+    "daysSupply": null,
+    "dosePerKgMl": 0.15,
+    "volumeMl": 300,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [],
+    "images": [],
+    "url": "https://herbpharm.cz/produkty/balanceoil-plus-citron?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "balanceoil-plus-orange-lemon-mint",
+    "name": "BalanceOil+ Orange Lemon Mint",
+    "tagline": "Stejné složení, pomerančovo-citronová příchuť s mátou.",
+    "description": [
+      "Nejprodávanější příchuť. Dávkování stejné jako u ostatních variant — 0,15 ml na kilogram hmotnosti denně.",
+      "EPA a DHA přispívají k normální činnosti srdce. Příznivého účinku se dosáhne při denním příjmu 250 mg EPA a DHA."
+    ],
+    "category": "omega3",
+    "price": 979,
+    "listPrice": 1450,
+    "unit": "300 ml",
+    "daysSupply": null,
+    "dosePerKgMl": 0.15,
+    "volumeMl": 300,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [],
+    "images": [],
+    "url": "https://herbpharm.cz/produkty/balanceoil-plus-orange-lemon-mint?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "balanceoil-plus-orange-lemon-mint-akce",
+    "name": "BalanceOil+ Orange Lemon Mint",
+    "tagline": "Druhá skladová položka téže příchuti — jiná cena.",
+    "description": [
+      "Tuhle položku prodávám levněji. Důvod doplním podle skutečnosti — obvykle jde o kratší expiraci nebo starší šarži.",
+      "EPA a DHA přispívají k normální činnosti srdce. Příznivého účinku se dosáhne při denním příjmu 250 mg EPA a DHA."
+    ],
+    "category": "omega3",
+    "price": 939,
+    "listPrice": 1770,
+    "unit": "300 ml",
+    "daysSupply": null,
+    "dosePerKgMl": 0.15,
+    "volumeMl": 300,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "akce"
+    ],
+    "images": [],
+    "internalNote": "OVERIT: na sanus-vita jsou dve polozky se stejnym nazvem (939/1770 a 979/1450). Zjistit, cim se lisi (objem? balení? expirace?) a upravit nazev i popis.",
+    "url": "https://herbpharm.cz/produkty/balanceoil-plus-orange-lemon-mint-akce?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "balanceoil-plus-grapefruit-lemon-lime",
+    "name": "BalanceOil+ Grapefruit Lemon Lime",
+    "tagline": "Svěžejší citrusová varianta téhož oleje.",
+    "description": [
+      "Pro toho, komu nesedí máta. Složení i dávkování odpovídá ostatním variantám BalanceOil+.",
+      "EPA a DHA přispívají k normální činnosti srdce. Příznivého účinku se dosáhne při denním příjmu 250 mg EPA a DHA."
+    ],
+    "category": "omega3",
+    "price": 979,
+    "listPrice": 1450,
+    "unit": "300 ml",
+    "daysSupply": null,
+    "dosePerKgMl": 0.15,
+    "volumeMl": 300,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [],
+    "images": [],
+    "url": "https://herbpharm.cz/produkty/balanceoil-plus-grapefruit-lemon-lime?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "balanceoil-tutti-frutti",
+    "name": "BalanceOil Tutti Frutti",
+    "tagline": "Sladší ovocná příchuť — varianta, kterou obvykle berou děti.",
+    "description": [
+      "Ovocná příchuť bez výrazné rybí chuti. U dětí se dávkování odvozuje od hmotnosti stejně jako u dospělých.",
+      "EPA a DHA přispívají k normální činnosti srdce. Příznivého účinku se dosáhne při denním příjmu 250 mg EPA a DHA."
+    ],
+    "category": "omega3",
+    "price": 948,
+    "listPrice": 1450,
+    "unit": "300 ml",
+    "daysSupply": null,
+    "dosePerKgMl": 0.15,
+    "volumeMl": 300,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "doporucujeme"
+    ],
+    "images": [],
+    "url": "https://herbpharm.cz/produkty/balanceoil-tutti-frutti?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "balanceoil-plus-premium",
+    "name": "BalanceOil+ Premium",
+    "tagline": "Koncentrovanější varianta — vyšší obsah EPA a DHA v menší dávce.",
+    "description": [
+      "Dává se stejným způsobem, ale díky vyšší koncentraci vychází denní dávka menší. Vhodné pro toho, komu vadí objem lžičky.",
+      "EPA a DHA přispívají k normální činnosti srdce. Příznivého účinku se dosáhne při denním příjmu 250 mg EPA a DHA."
+    ],
+    "category": "omega3",
+    "price": 1369,
+    "listPrice": 2200,
+    "unit": "300 ml",
+    "daysSupply": null,
+    "dosePerKgMl": 0.1,
+    "volumeMl": 300,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [],
+    "images": [],
+    "internalNote": "OVERIT davkovani Premium na etikete - dosadil jsem 0,10 ml/kg.",
+    "url": "https://herbpharm.cz/produkty/balanceoil-plus-premium?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "balanceoil-plus-vegan",
+    "name": "BalanceOil+ Vegan",
+    "tagline": "Omega-3 z mořských řas místo z ryb. Bez živočišných složek.",
+    "description": [
+      "Zdrojem EPA a DHA je řasový olej, ne rybí. Pro vegany a pro toho, kdo rybí olej nesnáší chuťově.",
+      "EPA a DHA přispívají k normální činnosti srdce. Příznivého účinku se dosáhne při denním příjmu 250 mg EPA a DHA."
+    ],
+    "category": "omega3",
+    "price": 1579,
+    "listPrice": 2750,
+    "unit": "300 ml",
+    "daysSupply": null,
+    "dosePerKgMl": 0.15,
+    "volumeMl": 300,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "novinka"
+    ],
+    "images": [],
+    "url": "https://herbpharm.cz/produkty/balanceoil-plus-vegan?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "balanceoil-plus-aquax",
+    "name": "BalanceOil+ AquaX",
+    "tagline": "Emulze mísitelná s vodou — dá se zamíchat do nápoje.",
+    "description": [
+      "Tekutá emulze, která se na rozdíl od čistého oleje rozmíchá ve vodě nebo v džusu. Praktické pro děti a pro toho, komu vadí olejová konzistence.",
+      "EPA a DHA přispívají k normální činnosti srdce. Příznivého účinku se dosáhne při denním příjmu 250 mg EPA a DHA."
+    ],
+    "category": "omega3",
+    "price": 1079,
+    "listPrice": 1820,
+    "unit": "300 ml",
+    "daysSupply": null,
+    "dosePerKgMl": 0.15,
+    "volumeMl": 300,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [],
+    "images": [],
+    "url": "https://herbpharm.cz/produkty/balanceoil-plus-aquax?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "zinobiotic-plus",
+    "name": "ZinoBiotic+",
+    "tagline": "Směs vlákniny do jídla nebo do nápoje.",
+    "description": [
+      "Prášková směs několika druhů vlákniny. Míchá se do jídla nebo do nápoje, chuťově je neutrální.",
+      "Doporučené denní množství i způsob použití najdete na obalu."
+    ],
+    "category": "vlaknina",
+    "price": 689,
+    "listPrice": 1090,
+    "unit": "180 g",
+    "daysSupply": 30,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [],
+    "images": [],
+    "url": "https://herbpharm.cz/produkty/zinobiotic-plus?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "xtend",
+    "name": "Xtend",
+    "tagline": "Doplněk s vitaminy a minerály v tabletách.",
+    "description": [
+      "Denní doplněk vitaminů a minerálů. Přesné složení a dávkování je na obalu."
+    ],
+    "category": "vitaminy",
+    "price": 689,
+    "listPrice": 1120,
+    "unit": "60 tablet",
+    "daysSupply": 30,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "novinka"
+    ],
+    "images": [],
+    "internalNote": "DOPLNIT klicove slozeni podle etikety.",
+    "url": "https://herbpharm.cz/produkty/xtend?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "xtend-plus",
+    "name": "Xtend+",
+    "tagline": "Rozšířená varianta Xtendu.",
+    "description": [
+      "Širší složení než základní Xtend. Přesný seznam živin a dávkování je na obalu."
+    ],
+    "category": "vitaminy",
+    "price": 969,
+    "listPrice": 1520,
+    "unit": "60 tobolek",
+    "daysSupply": 30,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [],
+    "images": [],
+    "internalNote": "DOPLNIT klicove slozeni podle etikety.",
+    "url": "https://herbpharm.cz/produkty/xtend-plus?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "zinoshine-plus",
+    "name": "ZinoShine+",
+    "tagline": "Vitamin D v tabletách.",
+    "description": [
+      "Vitamin D přispívá k normální funkci imunitního systému a k udržení normálního stavu kostí.",
+      "Dávkování podle obalu."
+    ],
+    "category": "vitaminy",
+    "price": 259,
+    "listPrice": 530,
+    "unit": "60 tablet",
+    "daysSupply": 60,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "novinka"
+    ],
+    "images": [],
+    "internalNote": "DOPLNIT obsah vitaminu D v jedne tablete podle etikety.",
+    "url": "https://herbpharm.cz/produkty/zinoshine-plus?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "protect-plus",
+    "name": "Protect+",
+    "tagline": "Doplněk zaměřený na podporu imunity.",
+    "description": [
+      "Složení a doporučené dávkování jsou uvedeny na obalu. Konkrétní účinky doplním až podle schválených tvrzení pro jednotlivé složky."
+    ],
+    "category": "vitaminy",
+    "price": 989,
+    "listPrice": 1550,
+    "unit": "60 tobolek",
+    "daysSupply": 30,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "novinka"
+    ],
+    "images": [],
+    "internalNote": "DOPLNIT slozeni. Zdravotni tvrzeni pouzit jen ta schvalena pro dane slozky.",
+    "url": "https://herbpharm.cz/produkty/protect-plus?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "viva-plus",
+    "name": "Viva+",
+    "tagline": "Doplněk stravy v tabletách.",
+    "description": [
+      "Balení obsahuje 60 tablet. Složení a doporučené dávkování jsou uvedeny na obalu."
+    ],
+    "category": "vitaminy",
+    "price": 639,
+    "listPrice": 1025,
+    "unit": "60 tablet",
+    "daysSupply": 30,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [],
+    "images": [],
+    "internalNote": "DOPLNIT slozeni podle etikety.",
+    "url": "https://herbpharm.cz/produkty/viva-plus?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "multify-plus",
+    "name": "Multify+",
+    "tagline": "Multivitaminový doplněk.",
+    "description": [
+      "Kombinace vitaminů a minerálů v jedné denní dávce. Přesné složení na obalu."
+    ],
+    "category": "vitaminy",
+    "price": 689,
+    "listPrice": 1170,
+    "unit": "60 tablet",
+    "daysSupply": 30,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "novinka"
+    ],
+    "images": [],
+    "internalNote": "DOPLNIT slozeni.",
+    "url": "https://herbpharm.cz/produkty/multify-plus?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "collagen-boozt",
+    "name": "Collagen Boozt",
+    "tagline": "Kolagenový nápoj.",
+    "description": [
+      "Deset lahviček po 46 ml, jedna na den. Přesné složení je na obalu."
+    ],
+    "category": "ostatni",
+    "price": 1379,
+    "listPrice": 2030,
+    "unit": "10 × 46 ml",
+    "daysSupply": 10,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "novinka"
+    ],
+    "images": [],
+    "internalNote": "Pozor: u kolagenu nejsou v EU schvalena zadna zdravotni tvrzeni - nesmi se psat nic o pleti, kloubech ani vlasech.",
+    "url": "https://herbpharm.cz/produkty/collagen-boozt?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "zinogene-plus",
+    "name": "ZinoGene+",
+    "tagline": "Doplněk stravy z prémiové řady.",
+    "description": [
+      "Složení a dávkování podle obalu. Popis doplním podle etikety."
+    ],
+    "category": "ostatni",
+    "price": 1279,
+    "listPrice": 2030,
+    "unit": "30 tablet",
+    "daysSupply": 30,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "novinka"
+    ],
+    "images": [],
+    "internalNote": "DOPLNIT slozeni. Nepouzivat zadna tvrzeni o stárnutí nebo genech - nejsou schvalena.",
+    "url": "https://herbpharm.cz/produkty/zinogene-plus?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "balancetest-omega-6-3",
+    "name": "BalanceTest — poměr omega-6:3",
+    "tagline": "Domácí odběr kapky krve, výsledek z laboratoře.",
+    "description": [
+      "Sada na odběr suché kapky krve z prstu. Vzorek se posílá do laboratoře a výsledkem je rozbor mastných kyselin včetně poměru omega-6 ku omega-3.",
+      "Není to lékařská diagnostika. Slouží k tomu, abyste věděli, kde jste, než začnete něco měnit — a aby se dalo po pár měsících porovnat."
+    ],
+    "category": "testy",
+    "price": 1479,
+    "listPrice": 4539,
+    "unit": "1 test",
+    "daysSupply": null,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [],
+    "images": [],
+    "internalNote": "OVERIT: jak dlouho je test registrovatelny a jestli neni po expiraci. Test s propadlou registraci neprodavat.",
+    "url": "https://herbpharm.cz/produkty/balancetest-omega-6-3?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "hba1c-test",
+    "name": "HbA1c Test",
+    "tagline": "Domácí odběr na stanovení glykovaného hemoglobinu.",
+    "description": [
+      "Sada na odběr kapky krve. Laboratoř stanoví hodnotu HbA1c, která ukazuje průměrnou hladinu cukru v krvi za předchozí měsíce.",
+      "Není to lékařská diagnostika a nenahrazuje vyšetření u lékaře. Pokud vám vyjde hodnota mimo referenční rozmezí, jděte k praktikovi."
+    ],
+    "category": "testy",
+    "price": 450,
+    "listPrice": 1920,
+    "unit": "1 test",
+    "daysSupply": null,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "akce"
+    ],
+    "images": [],
+    "url": "https://herbpharm.cz/produkty/hba1c-test?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "essent-plus-premium",
+    "name": "Essent+ Premium",
+    "tagline": "Kapslová forma — pro toho, kdo nechce olej ze lžičky.",
+    "description": [
+      "Šedesát softgel kapslí místo tekutého oleje. Praktické na cesty a řešení pro toho, komu nesedí chuť oleje.",
+      "EPA a DHA přispívají k normální činnosti srdce. Příznivého účinku se dosáhne při denním příjmu 250 mg EPA a DHA."
+    ],
+    "category": "omega3",
+    "price": 1092,
+    "listPrice": 1990,
+    "unit": "60 softgel kapslí",
+    "daysSupply": 30,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": true,
+    "stockCount": 0,
+    "badges": [
+      "tip"
+    ],
+    "images": [],
+    "internalNote": "OVERIT obsah EPA+DHA v jedne kapsli a doporucenou denni davku podle etikety.",
+    "url": "https://herbpharm.cz/produkty/essent-plus-premium?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "viva-plus-vita-detox",
+    "name": "Viva+ a Vita Detox",
+    "tagline": "Zvýhodněná dvojice.",
+    "description": [
+      "Dva produkty v jedné objednávce za nižší cenu. Obsah sady doplním podle skutečného balení."
+    ],
+    "category": "sady",
+    "price": 819,
+    "listPrice": 1038,
+    "unit": "sada",
+    "daysSupply": null,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": false,
+    "stockCount": 0,
+    "badges": [
+      "akce"
+    ],
+    "images": [],
+    "url": "https://herbpharm.cz/produkty/viva-plus-vita-detox?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  },
+  {
+    "slug": "balanceoil-plus-vita-immunity",
+    "name": "BalanceOil+ a Vita Immunity",
+    "tagline": "Zvýhodněná dvojice.",
+    "description": [
+      "Olej v kombinaci s doplňkem na imunitu. Obsah sady doplním podle skutečného balení."
+    ],
+    "category": "sady",
+    "price": 1079,
+    "listPrice": 1178,
+    "unit": "sada",
+    "daysSupply": null,
+    "dosePerKgMl": null,
+    "volumeMl": null,
+    "visible": true,
+    "inStock": false,
+    "stockCount": 0,
+    "badges": [
+      "akce"
+    ],
+    "images": [],
+    "url": "https://herbpharm.cz/produkty/balanceoil-plus-vita-immunity?utm_source=antiagehack&utm_medium=web&utm_campaign=shop"
+  }
+]

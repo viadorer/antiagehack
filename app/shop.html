@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doporučené doplňky – ANTI AGE HACK</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="description" content="Doporučené doplňky stravy pro pilíře programu ANTI AGE HACK. Kvalitní Omega-3, vitamin D3, hořčík a další.">
+  <link rel="canonical" href="https://antiagehack.cz/app/shop">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b1326">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <script src="/assets/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body class="helix-bg pb-32">
+
+<header class="bg-surface/70 sticky top-0 z-40 backdrop-blur-xl border-b border-white/5">
+  <div class="flex justify-between items-center w-full px-4 py-4 max-w-7xl mx-auto">
+    <div class="flex items-center gap-3">
+      <a href="/app/dashboard.html" class="text-primary active:scale-95 transition" aria-label="Zpět na dashboard">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
+      <h1 class="font-h3 text-h3 text-white">Doporučené doplňky</h1>
+    </div>
+    <a href="https://herbpharm.cz/?utm_source=antiagehack&utm_medium=web&utm_campaign=header" target="_blank" rel="noopener" class="text-sm text-primary hover:underline flex items-center gap-1">
+      <span>Celý eshop</span>
+      <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+    </a>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-6 space-y-8">
+
+  <!-- Intro -->
+  <section class="glass-card-strong rounded-2xl p-6 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-secondary/8 pointer-events-none"></div>
+    <div class="relative">
+      <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Pilíř suplementace</p>
+      <h2 class="font-h2 text-h2 text-white mb-2">Kvalitní doplňky, které dávají smysl</h2>
+      <p class="text-on-surface-variant max-w-2xl">Vybrané produkty pro pět pilířů programu. Nákup probíhá u našeho partnera <a href="https://herbpharm.cz?utm_source=antiagehack" target="_blank" rel="noopener" class="text-primary underline">HerbPharm.cz</a> – ověřený český dodavatel s doručením přes Zásilkovnu.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button class="filter-btn pill pill-primary" data-filter="all">Vše</button>
+        <button class="filter-btn pill pill-primary opacity-60" data-filter="omega3">Omega-3</button>
+        <button class="filter-btn pill pill-primary opacity-60" data-filter="vitaminy">Vitaminy</button>
+        <button class="filter-btn pill pill-primary opacity-60" data-filter="vlaknina">Vláknina</button>
+        <button class="filter-btn pill pill-primary opacity-60" data-filter="testy">Testy</button>
+        <button class="filter-btn pill pill-primary opacity-60" data-filter="sady">Sady</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended bundle CTA -->
+  <section class="glass-card rounded-2xl p-6 border-l-4 border-secondary">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-lg bg-secondary/15 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-secondary">stars</span>
+      </div>
+      <div class="flex-1">
+        <p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-1">Startovní balíček</p>
+        <h3 class="font-h3 text-h3 text-white mb-2">Doporučený stack pro první měsíc</h3>
+        <p class="text-sm text-on-surface-variant mb-3">Kombinace <strong class="text-white">BalanceOil+ Omega-3</strong>, <strong class="text-white">ZinoBiotic+ vláknina</strong> a <strong class="text-white">ZinoShine+ vitamin D3</strong> pokrývá tři nejčastěji nedostatkové oblasti.</p>
+        <div class="flex flex-wrap gap-2 items-center">
+          <span class="text-2xl font-data-display bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">1&nbsp;927 Kč</span>
+          <span class="text-sm text-on-surface-variant">za měsíční startovní set</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products grid -->
+  <section>
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    <p id="emptyState" class="text-center text-on-surface-variant py-12 hidden">Žádné produkty v této kategorii.</p>
+  </section>
+
+  <div class="helix-divider opacity-30 my-8"></div>
+
+  <div class="disclaimer-box">
+    <strong class="text-on-surface">Doplňky stravy nenahrazují pestrou a vyváženou stravu ani zdravý životní styl.</strong> Nepřekračujte doporučené denní dávkování. Uchovávejte mimo dosah dětí. Uvedené účinky odpovídají povoleným zdravotním tvrzením EU registru (Nařízení 432/2012). Program ANTI AGE HACK není zdravotní službou. Prodej a doručení zajišťuje partner <a href="https://herbpharm.cz?utm_source=antiagehack" target="_blank" rel="noopener" class="text-primary underline">HerbPharm.cz</a>.
+  </div>
+</main>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-lg border-t border-white/10 flex justify-around items-center px-4 py-3">
+  <a href="/app/dashboard.html" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">home</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Home</span>
+  </a>
+  <a href="/app/biometrics.html" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">monitoring</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Metriky</span>
+  </a>
+  <a href="/app/protocol.html" class="flex flex-col items-center text-on-surface-variant hover:bg-surface-variant/30 rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined">event_note</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Protokol</span>
+  </a>
+  <a href="/app/shop.html" class="flex flex-col items-center bg-primary-container/20 text-primary rounded-full px-4 py-1 transition active:scale-90">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">storefront</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Shop</span>
+  </a>
+  <span class="flex flex-col items-center text-on-surface-variant/40 cursor-not-allowed rounded-full px-4 py-1 relative" title="Připravujeme">
+    <span class="material-symbols-outlined">person</span>
+    <span class="font-label-caps text-label-caps mt-0.5">Profil</span>
+    <span class="absolute -top-1 right-1 text-[8px] bg-primary text-on-primary px-1 rounded-sm font-bold">BRZY</span>
+  </span>
+</nav>
+
+<script src="/assets/app.js"></script>
+<script>
+  // Category icons + gradient colors per category
+  const catStyle = {
+    omega3:   { icon: 'water_drop',  color: 'primary',   label: 'Omega-3' },
+    vlaknina: { icon: 'grass',       color: 'secondary', label: 'Vláknina' },
+    vitaminy: { icon: 'sunny',       color: 'primary',   label: 'Vitaminy' },
+    testy:    { icon: 'biotech',     color: 'secondary', label: 'Test' },
+    sady:     { icon: 'inventory_2', color: 'primary',   label: 'Sada' },
+    ostatni:  { icon: 'pill',        color: 'primary',   label: 'Doplněk' },
+  };
+
+  function productCard(p) {
+    const s = catStyle[p.category] || catStyle.ostatni;
+    const discount = p.listPrice > p.price ? Math.round((1 - p.price/p.listPrice)*100) : 0;
+    const outOfStock = p.inStock === false;
+    return `
+      <article class="glass-card rounded-2xl p-5 flex flex-col ${outOfStock ? 'opacity-60' : ''}" data-cat="${p.category}">
+        <div class="flex justify-between items-start mb-3">
+          <div class="w-12 h-12 rounded-lg bg-${s.color}/15 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-${s.color}">${s.icon}</span>
+          </div>
+          <div class="flex flex-col gap-1 items-end">
+            <span class="pill pill-${s.color === 'primary' ? 'primary' : 'secondary'}">${s.label}</span>
+            ${discount > 0 ? `<span class="pill pill-warn">-${discount}%</span>` : ''}
+            ${outOfStock ? '<span class="pill pill-warn">Vyprodáno</span>' : ''}
+          </div>
+        </div>
+        <h3 class="font-h3 text-lg text-white leading-snug mb-1">${escapeHtml(p.name)}</h3>
+        <p class="text-xs text-on-surface-variant mb-3 line-clamp-2">${escapeHtml(p.tagline || '')}</p>
+        <p class="text-[11px] text-on-surface-variant mb-4">${escapeHtml(p.unit || '')}</p>
+        <div class="mt-auto">
+          <div class="flex items-baseline gap-2 mb-3">
+            <span class="font-data-display text-h3 text-white">${p.price}&nbsp;Kč</span>
+            ${discount > 0 ? `<span class="text-xs text-on-surface-variant line-through">${p.listPrice}&nbsp;Kč</span>` : ''}
+          </div>
+          <a href="${escapeAttr(p.url)}" target="_blank" rel="noopener sponsored" class="btn-primary w-full text-sm" style="padding:10px 14px;">
+            <span class="material-symbols-outlined" style="font-size:18px;">shopping_bag</span>
+            Koupit u HerbPharm
+          </a>
+        </div>
+      </article>`;
+  }
+  function escapeHtml(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function escapeAttr(s) { return escapeHtml(s); }
+
+  let currentFilter = 'all';
+  let allProducts = [];
+
+  function render() {
+    const grid = document.getElementById('productsGrid');
+    const empty = document.getElementById('emptyState');
+    const filtered = currentFilter === 'all' ? allProducts : allProducts.filter(p => p.category === currentFilter);
+    if (filtered.length === 0) { grid.innerHTML = ''; empty.classList.remove('hidden'); return; }
+    empty.classList.add('hidden');
+    grid.innerHTML = filtered.map(productCard).join('');
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentFilter = btn.dataset.filter;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.add('opacity-60'));
+      btn.classList.remove('opacity-60');
+      render();
+    });
+  });
+
+  // Load recommended (curated 8) by default; press filter to swap to full catalog
+  fetch('/data/products-recommended.json')
+    .then(r => r.json())
+    .then(data => { allProducts = data; render(); })
+    .catch(() => {
+      document.getElementById('productsGrid').innerHTML = '<p class="col-span-full text-center text-error py-12">Katalog se nepodařilo načíst.</p>';
+    });
+
+  // Deep link to full catalog on non-default filter click
+  document.querySelectorAll('.filter-btn[data-filter]:not([data-filter="all"])').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      if (allProducts.length < 22) {
+        try {
+          const r = await fetch('/data/products.json');
+          allProducts = await r.json();
+          render();
+        } catch {}
+      }
+    });
+  });
+</script>
+</body>
+</html>
