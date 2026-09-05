@@ -1,0 +1,9 @@
+{
+  "name": "antiagehack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ANTI AGE HACK – landing + member area + Neon-backed shop/orders",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.9.5"
+  }
+}

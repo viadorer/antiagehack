@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objednávka – ANTI AGE HACK</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b1326">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <script src="/assets/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body class="helix-bg min-h-screen flex flex-col">
+  <header class="bg-surface/70 sticky top-0 z-40 backdrop-blur-xl border-b border-white/5">
+    <div class="flex items-center gap-4 w-full px-4 py-4 max-w-3xl mx-auto">
+      <a href="/app/shop.html" class="text-primary active:scale-95 transition" aria-label="Zpět do shopu">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
+      <h1 class="font-h3 text-h3 text-white">Dokončení objednávky</h1>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-3xl mx-auto w-full px-4 py-6 space-y-6">
+    <!-- Cart summary -->
+    <section class="glass-card-strong rounded-2xl p-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-h3 text-h3 text-white">Váš košík</h2>
+        <a href="/app/shop.html" class="text-xs text-primary hover:underline">Upravit</a>
+      </div>
+      <div id="cartItems" class="space-y-3 mb-4"></div>
+      <div class="pt-4 border-t border-white/5 space-y-2 text-sm">
+        <div class="flex justify-between"><span class="text-on-surface-variant">Mezisoučet</span><span id="cartSubtotal" class="text-white font-semibold">–</span></div>
+        <div class="flex justify-between"><span class="text-on-surface-variant">Doprava (Zásilkovna)</span><span class="text-white font-semibold">79 Kč</span></div>
+        <div class="flex justify-between text-lg pt-2 border-t border-white/5"><span class="text-white">Celkem</span><span id="cartTotal" class="font-data-display text-primary">–</span></div>
+      </div>
+    </section>
+
+    <!-- Customer form -->
+    <form id="checkoutForm" class="space-y-3">
+      <h2 class="font-h3 text-h3 text-white mb-2">Doručovací údaje</h2>
+      <input class="input-field" type="text" name="name" placeholder="Jméno a příjmení" required autocomplete="name">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <input class="input-field" type="email" name="email" placeholder="E-mail" required autocomplete="email">
+        <input class="input-field" type="tel" name="phone" placeholder="Telefon" required autocomplete="tel">
+      </div>
+      <input class="input-field" type="text" name="address" placeholder="Ulice, město, PSČ" required autocomplete="street-address">
+      <textarea class="input-field" name="note" placeholder="Poznámka k objednávce (volitelné)" rows="2"></textarea>
+
+      <label class="flex gap-3 items-start text-xs text-on-surface-variant cursor-pointer pt-2">
+        <input type="checkbox" name="gdpr" required class="mt-1 accent-primary flex-shrink-0">
+        <span>Souhlasím se zpracováním osobních údajů dle <a href="/legal/privacy.html" class="text-primary underline">zásad ochrany osobních údajů</a> a s <a href="/legal/terms.html" class="text-primary underline">obchodními podmínkami</a>.</span>
+      </label>
+      <label class="flex gap-3 items-start text-xs text-on-surface-variant cursor-pointer">
+        <input type="checkbox" name="marketing" class="mt-1 accent-secondary flex-shrink-0">
+        <span>Chci dostávat newsletter s tipy (nepovinné).</span>
+      </label>
+
+      <button type="submit" class="btn-primary w-full mt-4">
+        <span class="material-symbols-outlined" style="font-size:20px;">lock</span>
+        Odeslat objednávku
+      </button>
+      <p id="checkoutStatus" class="text-sm mt-2"></p>
+      <p class="text-[11px] text-on-surface-variant text-center">Platba probíhá až po potvrzení objednávky převodem. Doručuje partner HerbPharm.cz přes Zásilkovnu.</p>
+    </form>
+
+    <!-- Success -->
+    <section id="successBox" class="glass-card-strong rounded-2xl p-8 text-center hidden">
+      <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/20 flex items-center justify-center">
+        <span class="material-symbols-outlined text-secondary" style="font-size:40px;">check_circle</span>
+      </div>
+      <h2 class="font-h2 text-h2 text-white mb-2">Objednávka přijata</h2>
+      <p class="text-on-surface-variant mb-2">Číslo objednávky: <span id="orderNum" class="font-data-display text-primary"></span></p>
+      <p class="text-sm text-on-surface-variant mb-6">Platební instrukce jsme vám poslali e-mailem. Doručení do 1–2 pracovních dnů.</p>
+      <a href="/app/dashboard.html" class="btn-primary inline-flex">
+        <span class="material-symbols-outlined" style="font-size:20px;">home</span>
+        Zpět na dashboard
+      </a>
+    </section>
+  </main>
+
+  <footer class="py-6 text-center text-xs text-on-surface-variant">
+    🔒 Vaše údaje neprodáváme. Objednávku zpracovává partner HerbPharm.cz.
+  </footer>
+
+  <script src="/assets/app.js"></script>
+  <script>
+    const CART_KEY = 'aah_cart_v1';
+    const SHIPPING_PRICE = 79;
+    function getCart() {
+      try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch { return []; }
+    }
+    function saveCart(c) { localStorage.setItem(CART_KEY, JSON.stringify(c)); }
+    function fmt(n) { return new Intl.NumberFormat('cs-CZ').format(n) + ' Kč'; }
+
+    async function renderCart() {
+      const cart = getCart();
+      const container = document.getElementById('cartItems');
+      const subtotalEl = document.getElementById('cartSubtotal');
+      const totalEl = document.getElementById('cartTotal');
+      if (cart.length === 0) {
+        container.innerHTML = '<p class="text-on-surface-variant text-sm text-center py-4">Košík je prázdný. <a href="/app/shop.html" class="text-primary underline">Přejít do shopu</a></p>';
+        subtotalEl.textContent = '0 Kč';
+        totalEl.textContent = '0 Kč';
+        document.getElementById('checkoutForm').style.display = 'none';
+        return;
+      }
+      // Fetch live product data to get names + prices
+      try {
+        const r = await fetch('/api/products');
+        const { items = [] } = await r.json();
+        const bySlug = Object.fromEntries(items.map(p => [p.slug, p]));
+        let subtotal = 0;
+        container.innerHTML = cart.map(it => {
+          const p = bySlug[it.slug];
+          if (!p) return '';
+          const line = p.price * it.quantity;
+          subtotal += line;
+          return `<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg border border-white/5">
+            <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-primary" style="font-size:20px;">pill</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white truncate">${p.name}</p>
+              <p class="text-xs text-on-surface-variant">${p.price} Kč × ${it.quantity}</p>
+            </div>
+            <span class="font-data-display text-sm text-white">${fmt(line)}</span>
+            <button data-remove="${p.slug}" class="text-on-surface-variant hover:text-error transition" aria-label="Odebrat">
+              <span class="material-symbols-outlined" style="font-size:20px;">close</span>
+            </button>
+          </div>`;
+        }).join('');
+        subtotalEl.textContent = fmt(subtotal);
+        totalEl.textContent = fmt(subtotal + SHIPPING_PRICE);
+        container.querySelectorAll('[data-remove]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const c = getCart().filter(i => i.slug !== btn.dataset.remove);
+            saveCart(c); renderCart();
+          });
+        });
+      } catch (e) {
+        container.innerHTML = '<p class="text-error text-sm">Košík se nepodařilo načíst. Zkuste to prosím znovu.</p>';
+      }
+    }
+
+    renderCart();
+
+    document.getElementById('checkoutForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const cart = getCart();
+      if (cart.length === 0) return;
+      const data = Object.fromEntries(new FormData(e.target));
+      const status = document.getElementById('checkoutStatus');
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = 'Odesílám…';
+      try {
+        const r = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            customer: { name: data.name, email: data.email, phone: data.phone, address: data.address, note: data.note },
+            items: cart,
+            shipping: { id: 'zasilkovna', price: SHIPPING_PRICE },
+            source: 'antiagehack-shop',
+            consentMarketing: !!data.marketing,
+          }),
+        });
+        const body = await r.json();
+        if (!r.ok) throw new Error(body.error || 'Chyba');
+        document.getElementById('orderNum').textContent = body.orderNumber;
+        document.querySelector('main > form').style.display = 'none';
+        document.querySelector('main > section:first-child').style.display = 'none';
+        document.getElementById('successBox').classList.remove('hidden');
+        localStorage.removeItem(CART_KEY);
+      } catch (err) {
+        status.textContent = '❌ ' + (err.message || 'Objednávku se nepodařilo odeslat.');
+        status.className = 'text-sm text-error mt-2';
+        btn.disabled = false;
+        btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:20px;">lock</span> Odeslat objednávku';
+      }
+    });
+  </script>
+</body>
+</html>

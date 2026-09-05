@@ -79,6 +79,37 @@ Disease prevention/treatment claims jsou vždy zakázané (§ 5d zák. 40/1995).
 5. Disclaimer na každé stránce s doplňky stravy a member trackerem.
 6. GDPR consent u všech form submissions s odkazem na zásady.
 
+
+## 🗄️ Napojení na Neon DB (HerbPharm)
+
+Frontend čte produkty a zapisuje objednávky přímo do sdílené Neon Postgres databáze HerbPharm. **Jedna DB, dva frontendy** – ceny, dostupnost i objednávky vidíš na jednom místě v HerbPharm admin panelu.
+
+### Setup ve Vercelu (jednorázově)
+
+1. **Vercel Dashboard** → antiagehack → **Settings** → **Environment Variables**
+2. Přidej proměnnou:
+   - **Name**: `DATABASE_URL`
+   - **Value**: pooled connection string z Neonu (zkopíruj ho z HerbPharm projektu – měl by končit `-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require`)
+   - **Environments**: Production, Preview, Development
+3. Redeploy: `vercel --prod` (nebo push do main)
+
+### API endpointy
+
+| Endpoint | Metoda | Účel |
+|---|---|---|
+| `/api/products` | GET | Všechny viditelné produkty |
+| `/api/products?slug=xxx` | GET | Detail jednoho produktu |
+| `/api/products?category=omega3` | GET | Filtr podle kategorie |
+| `/api/products?recommended=1` | GET | 8 curated pro ANTI AGE HACK cílovku |
+| `/api/orders` | POST | Vytvoří objednávku v `orders` + `order_items` |
+| `/api/quiz` | POST | Uloží quiz výsledek do `quiz_results` + upsert customer |
+
+### Kde se objednávky objeví
+
+Po POST `/api/orders` se objednávka zapíše do stejné `orders` tabulky, kterou používá HerbPharm. **Admin panel HerbPharm** (`/admin/objednavky`) je uvidí okamžitě – rozlišíš je podle sloupce `source = 'antiagehack-shop'`.
+
+Odesílání mailů (Resend) probíhá v HerbPharm pipeline; případně přidej `RESEND_API_KEY` i sem, když budeš chtít maily posílat přímo z ANTI AGE HACK.
+
 ## 🚀 Deploy
 
 ### Vercel (doporučeno)

@@ -27,10 +27,16 @@
       </a>
       <h1 class="font-h3 text-h3 text-white">Doporučené doplňky</h1>
     </div>
-    <a href="https://herbpharm.cz/?utm_source=antiagehack&utm_medium=web&utm_campaign=header" target="_blank" rel="noopener" class="text-sm text-primary hover:underline flex items-center gap-1">
-      <span>Celý eshop</span>
-      <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
-    </a>
+    <div class="flex items-center gap-4">
+      <a href="/app/checkout.html" class="relative text-primary hover:opacity-80 transition flex items-center" aria-label="Košík">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span id="cartBadge" class="absolute -top-2 -right-2 min-w-[18px] h-[18px] px-1 rounded-full bg-secondary text-on-secondary text-[11px] font-bold inline-flex items-center justify-center" style="display:none;"></span>
+      </a>
+      <a href="https://herbpharm.cz/?utm_source=antiagehack&utm_medium=web&utm_campaign=header" target="_blank" rel="noopener" class="text-sm text-primary hover:underline hidden sm:flex items-center gap-1">
+        <span>Celý eshop</span>
+        <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+      </a>
+    </div>
   </div>
 </header>
 
@@ -146,15 +152,51 @@
             <span class="font-data-display text-h3 text-white">${p.price}&nbsp;Kč</span>
             ${discount > 0 ? `<span class="text-xs text-on-surface-variant line-through">${p.listPrice}&nbsp;Kč</span>` : ''}
           </div>
-          <a href="${escapeAttr(p.url)}" target="_blank" rel="noopener sponsored" class="btn-primary w-full text-sm" style="padding:10px 14px;">
-            <span class="material-symbols-outlined" style="font-size:18px;">shopping_bag</span>
-            Koupit u HerbPharm
+          <button data-add="${escapeAttr(p.slug)}" class="btn-primary w-full text-sm" style="padding:10px 14px;" ${outOfStock ? 'disabled' : ''}>
+            <span class="material-symbols-outlined" style="font-size:18px;">add_shopping_cart</span>
+            Přidat do košíku
+          </button>
+          <a href="${escapeAttr(p.url)}" target="_blank" rel="noopener sponsored" class="text-[11px] text-on-surface-variant hover:text-primary text-center mt-2 block">
+            Nebo objednat přímo u HerbPharm ↗
           </a>
         </div>
       </article>`;
   }
   function escapeHtml(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function escapeAttr(s) { return escapeHtml(s); }
+
+  
+  // Cart management (shared with checkout)
+  const CART_KEY = 'aah_cart_v1';
+  function getCart() { try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch { return []; } }
+  function saveCart(c) { localStorage.setItem(CART_KEY, JSON.stringify(c)); updateCartBadge(); }
+  function addToCart(slug) {
+    const c = getCart();
+    const existing = c.find(i => i.slug === slug);
+    if (existing) existing.quantity += 1;
+    else c.push({ slug, quantity: 1 });
+    saveCart(c);
+  }
+  function cartCount() { return getCart().reduce((s, i) => s + i.quantity, 0); }
+  function updateCartBadge() {
+    const el = document.getElementById('cartBadge');
+    if (!el) return;
+    const n = cartCount();
+    el.textContent = n > 0 ? n : '';
+    el.style.display = n > 0 ? 'inline-flex' : 'none';
+  }
+
+  // Delegate click on any [data-add] button
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-add]');
+    if (!btn) return;
+    addToCart(btn.dataset.add);
+    // Micro-feedback
+    const original = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:18px;">check</span> Přidáno';
+    setTimeout(() => { btn.innerHTML = original; }, 1200);
+  });
+  updateCartBadge();
 
   let currentFilter = 'all';
   let allProducts = [];
@@ -178,9 +220,9 @@
   });
 
   // Load recommended (curated 8) by default; press filter to swap to full catalog
-  fetch('/data/products-recommended.json')
+  fetch('/api/products?recommended=1')
     .then(r => r.json())
-    .then(data => { allProducts = data; render(); })
+    .then(data => { allProducts = data.items || data; render(); })
     .catch(() => {
       document.getElementById('productsGrid').innerHTML = '<p class="col-span-full text-center text-error py-12">Katalog se nepodařilo načíst.</p>';
     });
@@ -190,8 +232,9 @@
     btn.addEventListener('click', async () => {
       if (allProducts.length < 22) {
         try {
-          const r = await fetch('/data/products.json');
-          allProducts = await r.json();
+          const r = await fetch('/api/products');
+          const data = await r.json();
+          allProducts = data.items || data;
           render();
         } catch {}
       }
