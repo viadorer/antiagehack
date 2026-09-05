@@ -4,6 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vstupní dotazník – ANTI AGE HACK</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="description" content="Vstupní dotazník ANTI AGE HACK – 5 otázek za 3 minuty. Získejte osobní přehled o svém životním stylu a doporučené kroky.">
+  <link rel="canonical" href="https://antiagehack.cz/onboarding">
+  <meta name="theme-color" content="#0b1326">
+  <meta property="og:title" content="Vstupní dotazník – ANTI AGE HACK">
+  <meta property="og:description" content="Vstupní dotazník ANTI AGE HACK – 5 otázek za 3 minuty. Získejte osobní přehled o svém životním stylu a doporučené kroky.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://antiagehack.cz/onboarding">
+  <meta property="og:image" content="https://antiagehack.cz/images/og/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="ANTI AGE HACK">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://antiagehack.cz/images/og/og-image.jpg">
+  <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -116,8 +132,61 @@
           </div>
         </div>
 
+        <!-- Step 6: Výsledek -->
+        <div class="step" data-step="6">
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 border border-secondary/30 mb-4">
+              <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Vaše vstupní skóre</span>
+            </div>
+            <h2 class="font-h2 text-h2 text-white mb-2">Předběžný výsledek</h2>
+            <p class="text-on-surface-variant">Toto je základní přehled. Plný osobní plán vám zašleme e-mailem.</p>
+          </div>
+
+          <!-- Score card -->
+          <div class="glass-card-strong rounded-2xl p-6 mb-6">
+            <div class="flex items-end gap-4 mb-4">
+              <div>
+                <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-1">Skóre vitality</p>
+                <p class="font-data-display text-[56px] leading-none text-white"><span id="resultScore">–</span><span class="text-h3 text-on-surface-variant">/100</span></p>
+              </div>
+              <div class="ml-auto text-right">
+                <p class="text-xs text-on-surface-variant mb-1">Kategorie</p>
+                <span id="resultCategory" class="pill pill-primary">–</span>
+              </div>
+            </div>
+            <div class="w-full bg-surface-container-highest rounded-full h-1.5 mb-4">
+              <div id="resultBar" class="bg-gradient-to-r from-primary to-secondary h-full rounded-full transition-all" style="width:0%"></div>
+            </div>
+            <p id="resultText" class="text-sm text-on-surface-variant"></p>
+          </div>
+
+          <!-- Priority pillars -->
+          <div class="mb-6">
+            <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-3">Doporučené priority</p>
+            <div id="resultPriorities" class="space-y-2"></div>
+          </div>
+
+          <!-- Email capture for full plan -->
+          <div class="glass-card rounded-2xl p-6 border-l-4 border-secondary">
+            <h3 class="font-h3 text-h3 text-white mb-2">Získejte kompletní plán zdarma</h3>
+            <p class="text-sm text-on-surface-variant mb-4">Zašleme vám osobní 26týdenní plán šitý na míru vašim odpovědím.</p>
+            <input class="input-field mb-2" type="text" id="resultName" placeholder="Jméno" required>
+            <input class="input-field mb-3" type="email" id="resultEmail" placeholder="E-mail" required>
+            <label class="flex gap-3 items-start text-xs text-on-surface-variant cursor-pointer pt-1 mb-3">
+              <input type="checkbox" id="resultGdpr" required class="mt-1 accent-primary flex-shrink-0">
+              <span>Souhlasím se zpracováním osobních údajů dle <a href="/legal/privacy.html" class="text-primary underline">zásad ochrany osobních údajů</a>.</span>
+            </label>
+            <button type="button" id="resultSubmit" class="btn-primary w-full">
+              <span class="material-symbols-outlined" style="font-size:20px;">mail</span>
+              Poslat mi kompletní plán
+            </button>
+            <p id="resultStatus" class="text-sm mt-2"></p>
+          </div>
+        </div>
+
         <!-- Buttons -->
-        <div class="flex justify-between mt-10">
+        <div class="flex justify-between mt-10" id="navButtons">
           <button type="button" id="prevBtn" class="btn-ghost" disabled style="opacity:0.4;">
             <span class="material-symbols-outlined" style="font-size:18px;">arrow_back</span>
             Zpět
@@ -131,28 +200,92 @@
     </div>
   </main>
 
-  <footer class="py-6 text-center text-xs text-on-surface-variant">
-    🔒 Vaše odpovědi jsou v bezpečí. Slouží pouze k personalizaci doporučení.
+  <footer class="py-6 text-center text-xs text-on-surface-variant max-w-2xl mx-auto px-4">
+    🔒 Vaše odpovědi zpracováváme pouze pro personalizaci doporučení a přípravu plánu. Program není zdravotní službou a nenahrazuje konzultaci s lékařem. Doplňky stravy nenahrazují pestrou stravu.
   </footer>
 
   <script src="/assets/app.js"></script>
   <script>
     let currentStep = 1;
-    const totalSteps = 5;
+    const totalQuestions = 5; // questions 1-5
+    const resultStep = 6;
 
     function showStep(step) {
       document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
       document.querySelector(`[data-step="${step}"]`).classList.add('active');
-      document.getElementById('stepCounter').textContent = step;
-      document.getElementById('progressBar').style.width = (step / totalSteps * 100) + '%';
-      document.getElementById('prevBtn').disabled = step === 1;
-      document.getElementById('prevBtn').style.opacity = step === 1 ? '0.4' : '1';
+      document.getElementById('stepCounter').textContent = step <= totalQuestions ? step : totalQuestions;
+      const pct = step <= totalQuestions ? (step / totalQuestions * 100) : 100;
+      document.getElementById('progressBar').style.width = pct + '%';
+      document.getElementById('prevBtn').disabled = step === 1 || step === resultStep;
+      document.getElementById('prevBtn').style.opacity = (step === 1 || step === resultStep) ? '0.4' : '1';
       const next = document.getElementById('nextBtn');
-      if (step === totalSteps) {
-        next.innerHTML = '<span class="material-symbols-outlined" style="font-size:18px;">check</span> Dokončit a vidět výsledky';
+      const navButtons = document.getElementById('navButtons');
+      if (step === resultStep) {
+        navButtons.style.display = 'none';
+        return;
+      }
+      navButtons.style.display = 'flex';
+      if (step === totalQuestions) {
+        next.innerHTML = '<span class="material-symbols-outlined" style="font-size:18px;">check</span> Zobrazit výsledek';
       } else {
         next.innerHTML = 'Pokračovat <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>';
       }
+    }
+
+    // Score algorithm – transparent, deterministic
+    function computeScore(data) {
+      const w = {
+        age: { 'under-45': 10, '45-50': 10, '50-55': 8, '55-60': 6, 'over-60': 4 },
+        energy: { 'excellent': 25, 'ok': 18, 'low': 10, 'very-low': 4 },
+        movement: { 'daily': 25, '3-4': 22, '1-2': 14, 'rare': 8, 'none': 2 },
+        sleep: { 'great': 25, 'ok': 18, 'poor': 10, 'very-poor': 4 },
+        goal: { 'energy': 15, 'weight': 15, 'performance': 15, 'sleep': 15, 'prevention': 15 },
+      };
+      let s = 0;
+      Object.keys(w).forEach(k => { s += (w[k][data[k]] || 0); });
+      return Math.max(10, Math.min(100, s));
+    }
+
+    function categoryFor(score) {
+      if (score >= 80) return { label: 'Výborné', pill: 'pill-secondary', text: 'Máte skvělý základ. Cílem programu je udržet vaši úroveň dlouhodobě a přidat prevenci.' };
+      if (score >= 60) return { label: 'Solidní', pill: 'pill-primary', text: 'Máte na čem stavět. Pár úprav v pravidelnosti a regeneraci může výrazně posunout vaši energii.' };
+      if (score >= 40) return { label: 'Prostor pro růst', pill: 'pill-primary', text: 'Vaše skóre naznačuje, že máte řadu oblastí k práci. Dobrá zpráva – i malé změny přinesou rychlé výsledky.' };
+      return { label: 'Vyžaduje pozornost', pill: 'pill-warn', text: 'Nyní je ideální čas začít. Program vás povede krok za krokem, bez extrémů a v udržitelném tempu.' };
+    }
+
+    function prioritiesFor(data) {
+      const items = [];
+      if (['low','very-low'].includes(data.energy)) items.push({ icon: 'battery_charging_full', title: 'Zvýšit denní energii', desc: 'Práce se stravou, spánkem a hydratací' });
+      if (['1-2','rare','none'].includes(data.movement)) items.push({ icon: 'directions_run', title: 'Zavést pravidelný pohyb', desc: '3× týdně silový + aerobní trénink' });
+      if (['poor','very-poor'].includes(data.sleep)) items.push({ icon: 'bedtime', title: 'Kvalitnější spánek', desc: 'Rutina, prostředí a večerní návyky' });
+      if (items.length === 0) items.push({ icon: 'trending_up', title: 'Udržet a prohloubit', desc: 'Cílená optimalizace pěti pilířů' });
+      // Always add supplementation
+      items.push({ icon: 'pill', title: 'Cílená suplementace', desc: 'D3+K2, Omega-3, hořčík, B-komplex' });
+      return items.slice(0, 3);
+    }
+
+    function renderResult(data) {
+      const score = computeScore(data);
+      const cat = categoryFor(score);
+      document.getElementById('resultScore').textContent = score;
+      document.getElementById('resultCategory').textContent = cat.label;
+      document.getElementById('resultCategory').className = 'pill ' + cat.pill;
+      document.getElementById('resultText').textContent = cat.text;
+      // animate bar
+      setTimeout(() => { document.getElementById('resultBar').style.width = score + '%'; }, 200);
+      // priorities
+      const prio = prioritiesFor(data);
+      const container = document.getElementById('resultPriorities');
+      container.innerHTML = prio.map(p => `
+        <div class="glass-card rounded-xl p-4 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-primary">${p.icon}</span>
+          </div>
+          <div>
+            <p class="text-white font-semibold text-sm">${p.title}</p>
+            <p class="text-xs text-on-surface-variant">${p.desc}</p>
+          </div>
+        </div>`).join('');
     }
 
     // Selection visual feedback
@@ -165,7 +298,7 @@
     });
 
     document.getElementById('prevBtn').addEventListener('click', () => {
-      if (currentStep > 1) { currentStep--; showStep(currentStep); }
+      if (currentStep > 1 && currentStep <= totalQuestions) { currentStep--; showStep(currentStep); }
     });
 
     document.getElementById('nextBtn').addEventListener('click', async () => {
@@ -175,16 +308,44 @@
         alert('Vyberte prosím jednu z možností.');
         return;
       }
-      if (currentStep < totalSteps) {
+      if (currentStep < totalQuestions) {
         currentStep++;
         showStep(currentStep);
       } else {
-        // Submit
+        // Last question answered – compute and show result
         const form = document.getElementById('quizForm');
         const data = Object.fromEntries(new FormData(form));
         AAH.storage.set('quiz_result', { ...data, completed_at: new Date().toISOString() });
-        // TODO: send to Eshopsys: AAH.api('/quiz/submit', { method: 'POST', body: JSON.stringify(data) })
-        window.location.href = '/app/dashboard.html';
+        renderResult(data);
+        currentStep = resultStep;
+        showStep(currentStep);
+      }
+    });
+
+    // Result step – send full plan by email
+    document.getElementById('resultSubmit').addEventListener('click', async () => {
+      const name = document.getElementById('resultName').value.trim();
+      const email = document.getElementById('resultEmail').value.trim();
+      const gdpr = document.getElementById('resultGdpr').checked;
+      const status = document.getElementById('resultStatus');
+      if (!name || !email || !gdpr) {
+        status.textContent = 'Vyplňte prosím jméno, e-mail a souhlas se zpracováním údajů.';
+        status.className = 'text-sm text-error mt-2';
+        return;
+      }
+      const btn = document.getElementById('resultSubmit');
+      btn.disabled = true; btn.textContent = 'Odesílám…';
+      try {
+        // TODO: real API AAH.captureLeadAndRegister({ name, email, gdpr, marketing: true })
+        AAH.storage.set('lead', { name, email, gdpr, quiz: AAH.storage.get('quiz_result') });
+        status.textContent = '✅ Hotovo. Plán vám přijde e-mailem do 5 minut.';
+        status.className = 'text-sm text-secondary mt-2';
+        btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:20px;">check_circle</span> Odesláno';
+      } catch (err) {
+        status.textContent = 'Něco se pokazilo. Zkuste to prosím znovu.';
+        status.className = 'text-sm text-error mt-2';
+        btn.disabled = false;
+        btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:20px;">mail</span> Poslat mi kompletní plán';
       }
     });
   </script>

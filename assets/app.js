@@ -83,8 +83,10 @@ AAH.initFaq = function () {
     q.addEventListener('click', () => {
       const item = q.closest('[data-faq-item]');
       item.classList.toggle('open');
+      const isOpen = item.classList.contains('open');
+      q.setAttribute('aria-expanded', String(isOpen));
       const ans = item.querySelector('[data-faq-a]');
-      if (ans) ans.style.maxHeight = item.classList.contains('open') ? ans.scrollHeight + 'px' : '0px';
+      if (ans) ans.style.maxHeight = isOpen ? ans.scrollHeight + 'px' : '0px';
     });
   });
 };
@@ -195,6 +197,27 @@ AAH.initCookieBanner = function () {
     setTimeout(() => banner.remove(), 600);
   });
 };
+
+
+  // Plausible analytics – load lazily after consent (GDPR-safe)
+  document.addEventListener('aah:consent', (e) => {
+    if (e.detail && e.detail.analytics) {
+      const s = document.createElement('script');
+      s.defer = true; s.dataset.domain = 'antiagehack.cz';
+      s.src = 'https://plausible.io/js/script.js';
+      document.head.appendChild(s);
+    }
+  });
+  // If consent was granted previously, initialise now
+  (function() {
+    const c = (function(){ try { return JSON.parse(localStorage.getItem('aah_cookie_consent_v1')); } catch { return null; } })();
+    if (c && c.analytics) {
+      const s = document.createElement('script');
+      s.defer = true; s.dataset.domain = 'antiagehack.cz';
+      s.src = 'https://plausible.io/js/script.js';
+      document.head.appendChild(s);
+    }
+  })();
 
 document.addEventListener('DOMContentLoaded', () => {
   AAH.initFadeIn();
