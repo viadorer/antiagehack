@@ -40,11 +40,15 @@
         <p class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Member · 26týdenní program</p>
       </div>
     </div>
-    <div class="flex gap-2">
-      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-variant/40 hover:bg-surface-variant transition active:scale-95">
+    <div class="flex gap-2 items-center">
+      <a href="/" class="hidden sm:inline-flex text-sm text-on-surface-variant hover:text-primary px-3" title="Zpět na web">
+        <span class="material-symbols-outlined" style="font-size:18px;">arrow_back</span>
+        <span class="ml-1">Web</span>
+      </a>
+      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-variant/40 hover:bg-surface-variant transition active:scale-95" aria-label="Oznámení">
         <span class="material-symbols-outlined text-primary">notifications</span>
       </button>
-      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-variant/40 hover:bg-surface-variant transition active:scale-95" onclick="AAH.auth.logout()" title="Odhlásit">
+      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-variant/40 hover:bg-surface-variant transition active:scale-95" onclick="AAH.auth.logout()" title="Odhlásit" aria-label="Odhlásit">
         <span class="material-symbols-outlined text-on-surface-variant">logout</span>
       </button>
     </div>

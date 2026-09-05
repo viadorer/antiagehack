@@ -26,12 +26,45 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"></noscript>
 
   <script src="/assets/tailwind-config.js"></script>
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <link rel="stylesheet" href="/assets/app.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "ANTI AGE HACK",
+        "url": "https://antiagehack.cz/",
+        "logo": "https://antiagehack.cz/favicon.svg",
+        "description": "26týdenní program životního stylu pro muže 45–60 let. Pět pilířů, biometrický tracker, cílená suplementace.",
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://antiagehack.cz/",
+        "name": "ANTI AGE HACK",
+        "inLanguage": "cs-CZ",
+        "publisher": { "@type": "Organization", "name": "ANTI AGE HACK" }
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Program životního stylu",
+        "provider": { "@type": "Organization", "name": "ANTI AGE HACK" },
+        "areaServed": { "@type": "Country", "name": "Česká republika" },
+        "audience": { "@type": "PeopleAudience", "suggestedGender": "male", "suggestedMinAge": 45, "suggestedMaxAge": 60 },
+        "description": "Strukturovaný 26týdenní program se zaměřením na stravování, pohyb, spánek, regeneraci a cílenou suplementaci."
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="helix-bg">
 
@@ -47,6 +80,7 @@
     <nav class="hidden md:flex items-center gap-8 text-sm text-on-surface-variant">
       <a href="#hacks" class="hover:text-primary transition">5 pilířů</a>
       <a href="#program" class="hover:text-primary transition">Program</a>
+      <a href="#pricing" class="hover:text-primary transition">Ceník</a>
       <a href="#about" class="hover:text-primary transition">O nás</a>
       <a href="#faq" class="hover:text-primary transition">FAQ</a>
       <a href="/login.html" class="hover:text-primary transition">Přihlásit</a>
@@ -404,6 +438,91 @@
   </div>
 </section>
 
+<!-- PRICING -->
+<section class="py-24" id="pricing">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12 fade-in">
+      <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-3">Ceník</p>
+      <h2 class="font-h2 text-h2 md:text-[44px] text-white">Tři úrovně programu</h2>
+      <p class="mt-4 text-body-md text-on-surface-variant max-w-2xl mx-auto">Vyberte úroveň, která odpovídá tomu, jak hluboko chcete jít. Vždy stejné pilíře – liší se míra podpory a osobního vedení.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <!-- ESSENTIALS -->
+      <div class="glass-card rounded-2xl p-6 fade-in flex flex-col">
+        <p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2">Essentials</p>
+        <h3 class="font-h3 text-h3 text-white mb-1">Základ pro samostatné</h3>
+        <p class="text-sm text-on-surface-variant mb-6">Materiály + tracker · bez osobního vedení</p>
+        <div class="mb-6">
+          <div class="flex items-baseline gap-1">
+            <span class="font-data-display text-[40px] text-white">–</span>
+            <span class="text-on-surface-variant text-sm">Kč / 26 týdnů</span>
+          </div>
+          <p class="text-xs text-on-surface-variant mt-1">Cena bude finalizována brzy</p>
+        </div>
+        <ul class="space-y-2 text-sm text-on-surface-variant flex-1 mb-6">
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Přístup ke všem 5 pilířům</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Osobní přehled metrik</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Denní protokol a rutina</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Doporučení k suplementaci</li>
+          <li class="flex gap-2 opacity-40"><span class="material-symbols-outlined" style="font-size:18px;">close</span>Osobní konzultace</li>
+          <li class="flex gap-2 opacity-40"><span class="material-symbols-outlined" style="font-size:18px;">close</span>Podpora přes chat</li>
+        </ul>
+        <a href="#assessment" class="btn-ghost w-full">Začít dotazníkem</a>
+      </div>
+
+      <!-- STANDARD - featured -->
+      <div class="glass-card-strong rounded-2xl p-6 fade-in flex flex-col border-2 border-primary/40 relative">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 pill pill-primary" style="background:linear-gradient(135deg,#22d3ee,#4de082);color:#00363e;">Nejvolenější</span>
+        <p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">Standard</p>
+        <h3 class="font-h3 text-h3 text-white mb-1">Program s osobním vedením</h3>
+        <p class="text-sm text-on-surface-variant mb-6">Materiály + tracker + měsíční konzultace</p>
+        <div class="mb-6">
+          <div class="flex items-baseline gap-1">
+            <span class="font-data-display text-[40px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">–</span>
+            <span class="text-on-surface-variant text-sm">Kč / 26 týdnů</span>
+          </div>
+          <p class="text-xs text-on-surface-variant mt-1">Cena bude finalizována brzy</p>
+        </div>
+        <ul class="space-y-2 text-sm text-on-surface flex-1 mb-6">
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Vše z Essentials</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Osobní vstupní konzultace (60 min)</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Měsíční check-in (30 min)</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Personalizovaný plán</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Podpora přes chat (odpověď do 24 h)</li>
+          <li class="flex gap-2 opacity-40"><span class="material-symbols-outlined" style="font-size:18px;">close</span>1:1 každý týden</li>
+        </ul>
+        <a href="#assessment" class="btn-primary w-full">Začít dotazníkem</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="glass-card rounded-2xl p-6 fade-in flex flex-col">
+        <p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-2">Premium 1:1</p>
+        <h3 class="font-h3 text-h3 text-white mb-1">Kompletní servis</h3>
+        <p class="text-sm text-on-surface-variant mb-6">Program + týdenní osobní vedení</p>
+        <div class="mb-6">
+          <div class="flex items-baseline gap-1">
+            <span class="font-data-display text-[40px] text-white">–</span>
+            <span class="text-on-surface-variant text-sm">Kč / 26 týdnů</span>
+          </div>
+          <p class="text-xs text-on-surface-variant mt-1">Cena na míru po vstupní konzultaci</p>
+        </div>
+        <ul class="space-y-2 text-sm text-on-surface-variant flex-1 mb-6">
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Vše ze Standardu</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Týdenní 1:1 (45 min)</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Přednostní chat &amp; e-mail</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Individuální suplementační plán</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>Doporučená laboratorní vyšetření*</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-secondary" style="font-size:18px;">check</span>3 měsíce follow-up po skončení</li>
+        </ul>
+        <a href="#assessment" class="btn-ghost w-full">Začít dotazníkem</a>
+      </div>
+    </div>
+
+    <p class="text-center text-xs text-on-surface-variant mt-8 max-w-2xl mx-auto">* Doporučená laboratorní vyšetření zajišťuje váš praktický lékař či soukromá laboratoř. Program není zdravotní službou a nenahrazuje lékařskou péči. Ceny budou zveřejněny při spuštění programu; přesnou cenovou nabídku obdržíte po vyplnění vstupního dotazníku.</p>
+  </div>
+</section>
+
 <!-- ABOUT / KDO ZA TÍM STOJÍ -->
 <section class="py-24" id="about">
   <div class="max-w-7xl mx-auto px-4">
@@ -619,6 +738,7 @@
         <ul class="space-y-2 text-sm text-on-surface-variant">
           <li><a href="#hacks" class="hover:text-primary">5 pilířů</a></li>
           <li><a href="#program" class="hover:text-primary">Jak to funguje</a></li>
+          <li><a href="#pricing" class="hover:text-primary">Ceník</a></li>
           <li><a href="#faq" class="hover:text-primary">FAQ</a></li>
           <li><a href="/login.html" class="hover:text-primary">Přihlášení</a></li>
         </ul>
