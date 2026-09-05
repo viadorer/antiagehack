@@ -373,14 +373,42 @@
       }
     }
 
-    // Selection visual feedback
+    // Auto-save quiz state to localStorage – user může zavřít prohlížeč a pokračovat
+    const AUTOSAVE_KEY = 'aah_onboarding_state_v1';
+    function saveState() {
+      const form = document.getElementById('quizForm');
+      const data = Object.fromEntries(new FormData(form));
+      localStorage.setItem(AUTOSAVE_KEY, JSON.stringify({ step: currentStep, data, savedAt: new Date().toISOString() }));
+    }
+    function restoreState() {
+      try {
+        const s = JSON.parse(localStorage.getItem(AUTOSAVE_KEY));
+        if (!s || !s.data) return;
+        // Skip if quiz completed
+        if (s.step >= resultStep) return;
+        // Restore radio selections
+        Object.entries(s.data).forEach(([name, val]) => {
+          const radio = document.querySelector(`input[name="${name}"][value="${val}"]`);
+          if (radio) { radio.checked = true; radio.closest('.opt').classList.add('selected'); }
+        });
+        currentStep = Math.min(Math.max(s.step, 1), totalQuestions);
+        showStep(currentStep);
+      } catch {}
+    }
+    function clearState() { localStorage.removeItem(AUTOSAVE_KEY); }
+
+    // Selection visual feedback + auto-save on change
     document.querySelectorAll('.opt input[type=radio]').forEach(input => {
       input.addEventListener('change', () => {
         document.querySelectorAll(`.opt input[name="${input.name}"]`).forEach(i => {
           i.closest('.opt').classList.toggle('selected', i.checked);
         });
+        saveState();
       });
     });
+
+    // Restore on load
+    restoreState();
 
     document.getElementById('prevBtn').addEventListener('click', () => {
       if (currentStep > 1 && currentStep <= totalQuestions) { currentStep--; showStep(currentStep); }
@@ -404,6 +432,7 @@
         renderResult(data);
         currentStep = resultStep;
         showStep(currentStep);
+        clearState();
       }
     });
 

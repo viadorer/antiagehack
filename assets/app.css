@@ -246,3 +246,30 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .cookie-toggle input:checked + .slider { background: linear-gradient(135deg, #22d3ee, #4de082); }
 .cookie-toggle input:checked + .slider:before { transform: translateX(16px); }
 .cookie-toggle input:disabled + .slider { opacity: 0.6; cursor: not-allowed; }
+
+/* Prefers-reduced-motion: respect OS preference to disable animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .fade-in { opacity: 1 !important; transform: none !important; }
+  .cookie-banner { transform: translateY(0) !important; opacity: 1 !important; }
+}
+
+/* Print stylesheet: pro tisk protokolu nebo plánu */
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  .helix-bg, .dna-glow, .glass-card, .glass-card-strong {
+    background: #fff !important;
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    backdrop-filter: none !important;
+  }
+  header, nav, footer, .cookie-banner, .btn-primary, .btn-ghost { display: none !important; }
+  a { color: #000 !important; text-decoration: underline !important; }
+  h1, h2, h3, h4 { color: #000 !important; page-break-after: avoid; }
+  section { page-break-inside: avoid; padding: 12px 0 !important; }
+}
